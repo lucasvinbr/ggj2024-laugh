@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<element>
+	<attribute name="Name" value="gameScreen" />
+	<attribute name="Size" value="1920 1017" />
+	<attribute name="Max Anchor" value="1 1" />
+	<attribute name="Pivot" value="0 0" />
+	<attribute name="Enable Anchor" value="true" />
+</element>

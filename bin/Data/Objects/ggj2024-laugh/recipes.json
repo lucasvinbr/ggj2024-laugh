@@ -1,0 +1,92 @@
+{
+    "ingredients": {
+        "flour": {
+            "name": "Flour",
+            "imagepath": "Urho2D/greenspiral.png"
+        },
+        "fodase": {
+            "name": "Fodase",
+            "imagepath": "Urho2D/imp_all.png"
+        },
+        "urho": {
+            "name": "Urho",
+            "imagepath": "Textures/FishBoneLogo.png"
+        },
+        "stretchable": {
+            "name": "Stretchable",
+            "imagepath": "Urho2D/Stretchable.png"
+        }
+    },
+    "recipes": {
+        "aster": {
+            "name": "Aster",
+            "imagepath": "Urho2D/Aster.png",
+            "ingredients": [
+                "flour",
+                "flour",
+                "flour",
+                "urho"
+            ]
+        },
+        "fedese": {
+            "name": "Fedese",
+            "imagepath": "Urho2D/ggj2024-laugh/imp_body.png",
+            "ingredients": [
+                "fodase",
+                "fodase",
+                "fodase",
+                "fodase"
+            ]
+        },
+        "blood": {
+            "name": "Blood",
+            "imagepath": "Urho2D/ggj2024-laugh/imp_blood.png",
+            "ingredients": [
+                "flour",
+                "urho",
+                "stretchable",
+                "fodase"
+            ]
+        },
+        "gold": {
+            "name": "Gold",
+            "imagepath": "Urho2D/GoldIcon.png",
+            "ingredients": [
+                "flour",
+                "urho",
+                "urho",
+                "fodase"
+            ]
+        },
+        "ball": {
+            "name": "Ball",
+            "imagepath": "Urho2D/Ball.png",
+            "ingredients": [
+                "flour",
+                "stretchable",
+                "stretchable",
+                "fodase"
+            ]
+        },
+        "box": {
+            "name": "Box",
+            "imagepath": "Urho2D/Box.png",
+            "ingredients": [
+                "flour",
+                "flour",
+                "urho",
+                "fodase"
+            ]
+        },
+        "sunpng": {
+            "name": "sun.png",
+            "imagepath": "Urho2D/sun.png",
+            "ingredients": [
+                "flour",
+                "flour",
+                "fodase",
+                "fodase"
+            ]
+        }
+    }
+}
