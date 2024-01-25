@@ -5,6 +5,7 @@
 #include <Urho3D/Audio/SoundSource.h>
 #include <Urho3D/UI/UIElement.h>
 #include "../UIGameScreen.h"
+#include "../../dataObjs/RecipeData.h"
 
 using namespace Urho3D;
 

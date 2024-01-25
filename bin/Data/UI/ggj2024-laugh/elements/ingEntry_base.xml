@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<element type="Button">
+	<attribute name="Name" value="ingEntry_base" />
+	<attribute name="Min Size" value="200 200" />
+	<attribute name="Max Size" value="200 200" />
+	<attribute name="Pivot" value="0 0" />
+	<attribute name="Image Rect" value="16 0 32 16" />
+	<attribute name="Border" value="4 4 4 4" />
+	<attribute name="Hover Image Offset" value="0 16" />
+	<attribute name="Pressed Image Offset" value="16 0" />
+	<element type="Sprite" style="Sprite">
+		<attribute name="Name" value="ingSprite" />
+		<attribute name="Size" value="150 150" />
+		<attribute name="Hotspot" value="75 75" />
+		<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/imp_body.png" />
+		<attribute name="Image Rect" value="0 0 124 131" />
+		<attribute name="Horiz Alignment" value="Center" />
+		<attribute name="Vert Alignment" value="Center" />
+	</element>
+</element>

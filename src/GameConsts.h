@@ -5,6 +5,11 @@ constexpr auto TAG_PLAYER = "player";
 constexpr auto TAG_DEAD = "dead";
 
 
+constexpr unsigned int SPRITELAYER_BG = 0;
+constexpr unsigned int SPRITELAYER_BEHIND_MIXER = 1;
+constexpr unsigned int SPRITELAYER_INSIDE_MIXER = 2;
+constexpr unsigned int SPRITELAYER_MIXER = 4;
+
 /// <summary>
 /// not really a layer, it's actually "no layer selected", so it's just "ignore this"
 /// </summary>

@@ -61,7 +61,7 @@ namespace Laugh {
             JSONValue parsedData = JSONValue();
             auto& entryData = entry->second_;
             parsedData.Set("name", entryData.name_);
-            parsedData.Set("imagepath", entryData.ImageFilePath_);
+            parsedData.Set("imagepath", entryData.imageFilePath_);
             ingsJson.Set(entry->first_, parsedData);
             ++entry;
         }
@@ -73,7 +73,7 @@ namespace Laugh {
             JSONValue parsedData = JSONValue();
             auto& entryData = entry->second_;
             parsedData.Set("name", entryData.name_);
-            parsedData.Set("imagepath", entryData.ImageFilePath_);
+            parsedData.Set("imagepath", entryData.imageFilePath_);
             parsedData.Set("ingredients", JsonUtils::SetupJsonArrayFromStringVector(entryData.ingredients_));
             recipesJson.Set(entry->first_, parsedData);
             ++entry;

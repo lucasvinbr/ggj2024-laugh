@@ -11,6 +11,7 @@
 #include "UILoading.h"
 #include "../GameUI.h"
 #include "../../input/MouseHandler.h"
+#include "UIMixer.h"
 
 
 using namespace Urho3D;
@@ -46,14 +47,15 @@ namespace Laugh {
 		// TODO set the data being loaded elsewhere
 		// maybe make this screen handle loading situations other than "menu->game"
 
-		World::instance_->CreateDynamicContent();
+		//World::instance_->CreateDynamicContent();
 
 		World::instance_->curGameState_ = GAMESTATE_PLAYING;
 
 		URHO3D_LOGDEBUG("loading done!");
-		MouseHandler::instance_->SetMouseMode(MM_ABSOLUTE);
 
 		Hide();
+
+		GameUI::instance_->ShowScreen<UIMixer>();
 	}
 
 	void UILoading::Hide()

@@ -15,7 +15,7 @@
 			<attribute name="Pivot" value="0 0" />
 			<attribute name="Enable Anchor" value="true" />
 			<attribute name="Is Enabled" value="true" />
-			<attribute name="Texture" value="Texture2D;Textures/nuga/fx/muzzle_flash/muzzleflash_yellow_x.png" />
+			<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/title_bg.png" />
 			<attribute name="Image Rect" value="0 0 1024 512" />
 			<element>
 				<attribute name="Position" value="50 -30" />
@@ -130,6 +130,13 @@
 			<attribute name="Texture" value="Texture2D;" />
 			<attribute name="Image Rect" value="0 0 1097 653" />
 		</element>
+	</element>
+	<element>
+		<attribute name="Name" value="MixerScreen" />
+		<attribute name="Size" value="1280 720" />
+		<attribute name="Max Anchor" value="1 1" />
+		<attribute name="Pivot" value="0 0" />
+		<attribute name="Enable Anchor" value="true" />
 	</element>
 	<element type="Text" style="DebugHudText">
 		<attribute name="Pivot" value="0 0" />
@@ -311,7 +318,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:16 2024] DEBUG: 40" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading resource Shaders/GLSL/Basic.glsl" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -323,7 +330,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:16 2024] DEBUG: 0.13176" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Compiled vertex shader Basic(DIFFMAP VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -335,7 +342,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:16 2024] DEBUG: Added decal with 38 vertices" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Compiled pixel shader Basic(DIFFMAP VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -347,7 +354,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:16 2024] DEBUG: Added decal with 777 vertices" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Linked vertex shader Basic(DIFFMAP VERTEXCOLOR) and pixel shader Basic(DIFFMAP VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -359,7 +366,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:18 2024] DEBUG: 40" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Compiled pixel shader Basic(ALPHAMAP VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -371,7 +378,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:18 2024] DEBUG: 0.104839" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Linked vertex shader Basic(DIFFMAP VERTEXCOLOR) and pixel shader Basic(ALPHAMAP VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -383,7 +390,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:18 2024] DEBUG: Added decal with 29 vertices" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading resource UI/ggj2024-laugh/screen_loading.xml" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -395,7 +402,19 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:18 2024] DEBUG: Added decal with 56 vertices" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading UI layout UI/ggj2024-laugh/screen_loading.xml" />
+					</element>
+					<element type="Text" style="ConsoleErrorText">
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Color" value="1 0 0 1" />
+						<attribute name="Top Left Color" value="1 0 0 1" />
+						<attribute name="Top Right Color" value="1 0 0 1" />
+						<attribute name="Bottom Left Color" value="1 0 0 1" />
+						<attribute name="Bottom Right Color" value="1 0 0 1" />
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
+						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] ERROR: Could not find resource Urho2D/duality/screens/tela_inicial.png" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -407,7 +426,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:18 2024] DEBUG: Loading resource Sounds/nuga/d/mmattos/d_103.wav" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: loading done!" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -419,7 +438,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:21 2024] DEBUG: Loading resource Materials/nuga/fx/decal_bpool_2.xml" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading resource UI/ggj2024-laugh/screen_game.xml" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -431,7 +450,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:21 2024] DEBUG: Loading resource Textures/nuga/fx/blood_pools/bpool_1.dds" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading UI layout UI/ggj2024-laugh/screen_game.xml" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -443,7 +462,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:21 2024] DEBUG: Loading temporary resource Textures/nuga/fx/blood_pools/bpool_1.xml" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading resource Urho2D/ggj2024-laugh/bg.png" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -455,7 +474,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:21 2024] DEBUG: Loading resource Textures/nuga/fx/blood_pools/bpool_1_s.dds" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:39 2024] DEBUG: Compiled vertex shader Basic(VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -467,7 +486,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:21 2024] DEBUG: Added decal with 5 vertices" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:39 2024] DEBUG: Compiled pixel shader Basic(VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -479,19 +498,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:21 2024] DEBUG: Added decal with 4 vertices" />
-					</element>
-					<element type="Text" style="ConsoleDebugText">
-						<attribute name="Pivot" value="0 0" />
-						<attribute name="Color" value="1 0.6 0 1" />
-						<attribute name="Top Left Color" value="1 0.6 0 1" />
-						<attribute name="Top Right Color" value="1 0.6 0 1" />
-						<attribute name="Bottom Left Color" value="1 0.6 0 1" />
-						<attribute name="Bottom Right Color" value="1 0.6 0 1" />
-						<attribute name="Is Enabled" value="true" />
-						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
-						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan  4 20:09:25 2024] DEBUG: Resized scratch buffer to size 700096" />
+						<attribute name="Text" value="[Wed Jan 24 21:28:39 2024] DEBUG: Linked vertex shader Basic(VERTEXCOLOR) and pixel shader Basic(VERTEXCOLOR)" />
 					</element>
 				</element>
 			</element>

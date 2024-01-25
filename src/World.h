@@ -3,14 +3,9 @@
 #include <Urho3D/Core/Object.h>
 #include <Urho3D/Engine/Engine.h>
 #include <Urho3D/Scene/Scene.h>
-#include <Urho3D/Graphics/Terrain.h>
-#include <Urho3D/Graphics/AnimatedModel.h>
-#include <Urho3D/Navigation/DynamicNavigationMesh.h>
 #include <Urho3D/Navigation/Navigable.h>
 #include <Urho3D/Graphics/Viewport.h>
 #include <Urho3D/Physics/PhysicsWorld.h>
-#include <Urho3D/Physics/RigidBody.h>
-#include <Urho3D/Physics/CollisionShape.h>
 #include <Urho3D/Graphics/Camera.h>
 #include <Urho3D/Graphics/DebugRenderer.h>
 #include <Urho3D/Physics/PhysicsWorld.h>
@@ -23,9 +18,11 @@
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Resource/XMLFile.h>
 #include <Urho3D/Core/CoreEvents.h>
+#include <Urho3D/Urho2D/AnimatedSprite2D.h>
 #include "GameConsts.h"
 #include "WorldEffects.h"
 #include "dataObjs/RecipeData.h"
+#include "TentacleArm.h"
 
 using namespace Urho3D;
 
@@ -52,6 +49,8 @@ namespace Laugh {
 		SharedPtr<RecipesData> recipesData_;
 		GameState curGameState_;
 		WorldEffects effects_;
+
+		SharedPtr<TentacleArm> topLeftArm_, topRightArm_, botLeftArm_, botRightArm_;
 
 		/// <summary>
 		/// singleton, initialized on MainApp startup

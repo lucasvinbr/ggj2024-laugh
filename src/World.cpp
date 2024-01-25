@@ -2,6 +2,10 @@
 #include "Debug.h"
 #include "GameConsts.h"
 #include "World.h"
+#include <Urho3D/Urho2D/Drawable2D.h>
+#include <Urho3D/Graphics/Graphics.h>
+#include <Urho3D/Urho2D/StaticSprite2D.h>
+#include <Urho3D/Urho2D/Sprite2D.h>
 
 using namespace Urho3D;
 
@@ -38,10 +42,16 @@ namespace Laugh {
         scene_->CreateComponent<DebugRenderer>();
 
         Node* cameraNode = new Node(context_);
-        cameraNode->SetPosition(Vector3::ONE * 5.0f);
+        cameraNode->SetPosition(Vector3());
 
         camera_ = cameraNode->CreateComponent<Camera>();
-        camera_->SetFarClip(MAX_VIEW_DISTANCE);
+        //camera_->SetFarClip(MAX_VIEW_DISTANCE);
+
+        camera_->SetOrthographic(true);
+        auto* graphics = GetSubsystem<Graphics>();
+        camera_->SetOrthoSize((float)graphics->GetHeight() * PIXEL_SIZE);
+        camera_->SetZoom(2.0f * Min((float)graphics->GetWidth() / 1280.0f, (float)graphics->GetHeight() / 800.0f)); // Set zoom according to user's resolution to ensure full visibility (initial zoom (2.0) is set for full visibility at 1280x800 resolution)
+
 
         // apparently, this affects model lods and animation update frequency
         camera_->SetLodBias(1.0f);
@@ -69,6 +79,9 @@ namespace Laugh {
         URHO3D_LOGDEBUG("num recipes: " + String(recipesData_->recipes_.Size()));
 
         SubscribeToEvent(E_POSTRENDERUPDATE, URHO3D_HANDLER(World, HandlePostRenderUpdate));
+
+        //in this game, the main scene begins loaded
+        CreateDynamicContent();
     }
 
     void World::CreateDynamicContent()
@@ -99,7 +112,12 @@ namespace Laugh {
         light->SetShadowBias(BiasParameters(0.00025f, 0.5f));
         light->SetShadowCascade(CascadeParameters(MAX_VIEW_DISTANCE / 20, MAX_VIEW_DISTANCE / 4, MAX_VIEW_DISTANCE, 0.0f, 0.8f));
 
+        auto cache = GetSubsystem<ResourceCache>();
 
+        auto bgNode = dynamicContentParent_->CreateChild("bg");
+        auto bgSprite = bgNode->CreateComponent<StaticSprite2D>();
+        bgSprite->SetSprite(cache->GetResource<Sprite2D>("Urho2D/ggj2024-laugh/bg.png"));
+        bgSprite->SetLayer(SPRITELAYER_BG);
     }
 
     void World::Cleanup()

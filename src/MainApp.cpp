@@ -4,6 +4,7 @@
 #include "MainApp.h"
 #include <Urho3D/Urho3DAll.h>
 #include "World.h"
+#include "Mixer.h"
 #include "dataObjs/RecipeData.h"
 
 // debugnew must always be included last!!!!!!!!
@@ -15,7 +16,9 @@ using namespace Laugh;
 
 MainApp::MainApp(Context* context) : Application(context)
 {
+	Mixer::RegisterObject(context);
 	RecipesData::RegisterObject(context);
+	TentacleArm::RegisterObject(context);
 }
 /**
 * This method is called before the engine has been initialized.

@@ -14,12 +14,12 @@ namespace Laugh {
 
 	struct Ingredient {
 		String name_;
-		String ImageFilePath_;
+		String imageFilePath_;
 	};
 
 	struct Recipe {
 		String name_;
-		String ImageFilePath_;
+		String imageFilePath_;
 		Vector<String> ingredients_;
 	};
 
