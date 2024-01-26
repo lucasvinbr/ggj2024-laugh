@@ -2,6 +2,7 @@
 #include <Urho3D/Core/Context.h>
 #include <Urho3D/Core/Object.h>
 #include <Urho3D/Container/Ptr.h>
+#include <Urho3D/Scene/Node.h>
 #include <Urho3D/Scene/LogicComponent.h>
 #include <Urho3D/Urho2D/Sprite2D.h>
 #include <Urho3D/Urho2D/StaticSprite2D.h>
@@ -25,8 +26,18 @@ namespace Laugh {
 
 		void Update(float timeStep);
 
+		void SetOnScreen(bool onScreen);
+
 	private:
 		AnimatedSprite2D* armSprite_;
 		Node* attachmentPoint_;
+		bool doBreathingAnim_;
+		bool isOnScreen_;
+		float breatheAnimTime_;
+
+		float appearAnimTime_;
+		Vector3 onScreenPos_, offScreenPos_;
+
+		const float ANIM_ENTER_DURATION = 0.5f;
 };
 }

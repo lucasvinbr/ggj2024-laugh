@@ -57,6 +57,11 @@ namespace Laugh {
 	{
 		Hide();
 		GameUI::instance_->ShowScreen<UILoading>();
+
+		World::instance_->topLeftArm_->SetOnScreen(false);
+		World::instance_->topRightArm_->SetOnScreen(false);
+		World::instance_->botLeftArm_->SetOnScreen(false);
+		World::instance_->botRightArm_->SetOnScreen(false);
 	}
 
 	void UIMainMenu::HandleExitButton(StringHash, VariantMap& eventData)

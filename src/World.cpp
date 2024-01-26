@@ -50,7 +50,7 @@ namespace Laugh {
         camera_->SetOrthographic(true);
         auto* graphics = GetSubsystem<Graphics>();
         camera_->SetOrthoSize((float)graphics->GetHeight() * PIXEL_SIZE);
-        camera_->SetZoom(2.0f * Min((float)graphics->GetWidth() / 1280.0f, (float)graphics->GetHeight() / 800.0f)); // Set zoom according to user's resolution to ensure full visibility (initial zoom (2.0) is set for full visibility at 1280x800 resolution)
+        camera_->SetZoom(1.5f * Min((float)graphics->GetWidth() / 1280.0f, (float)graphics->GetHeight() / 800.0f)); // Set zoom according to user's resolution to ensure full visibility (initial zoom (2.0) is set for full visibility at 1280x800 resolution)
 
 
         // apparently, this affects model lods and animation update frequency
@@ -118,6 +118,26 @@ namespace Laugh {
         auto bgSprite = bgNode->CreateComponent<StaticSprite2D>();
         bgSprite->SetSprite(cache->GetResource<Sprite2D>("Urho2D/ggj2024-laugh/bg.png"));
         bgSprite->SetLayer(SPRITELAYER_BG);
+
+        auto tentacleTLNode = dynamicContentParent_->CreateChild("tentacle_topLeft");
+        topLeftArm_ = tentacleTLNode->CreateComponent<TentacleArm>();
+
+        auto tentacleTRNode = tentacleTLNode->Clone();
+        tentacleTRNode->SetName("tentacle_topRight");
+        topRightArm_ = tentacleTRNode->GetComponent<TentacleArm>();
+
+        auto tentacleBLNode = tentacleTLNode->Clone();
+        tentacleBLNode->SetName("tentacle_botLeft");
+        botLeftArm_ = tentacleBLNode->GetComponent<TentacleArm>();
+
+        auto tentacleBRNode = tentacleTLNode->Clone();
+        tentacleBRNode->SetName("tentacle_botRight");
+        botRightArm_ = tentacleBRNode->GetComponent<TentacleArm>();
+
+        topLeftArm_->Setup(true, true);
+        topRightArm_->Setup(true, false);
+        botLeftArm_->Setup(false, true);
+        botRightArm_->Setup(false, false);
     }
 
     void World::Cleanup()

@@ -7,136 +7,71 @@
 		<attribute name="Max Anchor" value="1 1" />
 		<attribute name="Pivot" value="0 0" />
 		<attribute name="Enable Anchor" value="true" />
-		<attribute name="Is Visible" value="false" />
 		<element type="BorderImage">
 			<attribute name="Name" value="bg" />
 			<attribute name="Size" value="1280 720" />
 			<attribute name="Max Anchor" value="1 1" />
 			<attribute name="Pivot" value="0 0" />
 			<attribute name="Enable Anchor" value="true" />
+			<attribute name="Color" value="1 1 1 0" />
+			<attribute name="Top Left Color" value="1 1 1 0" />
+			<attribute name="Top Right Color" value="1 1 1 0" />
+			<attribute name="Bottom Left Color" value="1 1 1 0" />
+			<attribute name="Bottom Right Color" value="1 1 1 0" />
 			<attribute name="Is Enabled" value="true" />
-			<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/title_bg.png" />
-			<attribute name="Image Rect" value="0 0 1024 512" />
-			<element>
-				<attribute name="Position" value="50 -30" />
-				<attribute name="Size" value="500 240" />
+			<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bg.png" />
+			<attribute name="Image Rect" value="0 0 1024 1024" />
+			<element type="Button">
+				<attribute name="Name" value="ButtonPlay" />
+				<attribute name="Position" value="60 60" />
+				<attribute name="Size" value="264 80" />
+				<attribute name="Min Size" value="0 80" />
+				<attribute name="Max Size" value="2147483647 400" />
+				<attribute name="Pivot" value="0 0" />
+				<attribute name="Image Rect" value="16 0 32 16" />
+				<attribute name="Border" value="4 4 4 4" />
+				<attribute name="Hover Image Offset" value="0 16" />
+				<attribute name="Pressed Image Offset" value="16 0" />
+				<attribute name="Pressed Child Offset" value="-1 1" />
+				<element type="Text">
+					<attribute name="Min Anchor" value="0.5 0.5" />
+					<attribute name="Max Anchor" value="0.5 0.5" />
+					<attribute name="Pivot" value="0.5 0.5" />
+					<attribute name="Top Left Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Top Right Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Bottom Left Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Bottom Right Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Font Size" value="48" />
+					<attribute name="Text" value="PLAY" />
+				</element>
+			</element>
+			<element type="Button">
+				<attribute name="Name" value="ButtonExit" />
+				<attribute name="Position" value="60 -60" />
+				<attribute name="Size" value="264 80" />
+				<attribute name="Min Size" value="0 80" />
+				<attribute name="Max Size" value="2147483647 400" />
 				<attribute name="Min Anchor" value="0 1" />
 				<attribute name="Max Anchor" value="0 1" />
 				<attribute name="Pivot" value="0 1" />
-				<attribute name="Layout Mode" value="Vertical" />
-				<attribute name="Layout Spacing" value="40" />
-				<element type="Button">
-					<attribute name="Name" value="ButtonPlay" />
-					<attribute name="Min Size" value="0 80" />
-					<attribute name="Pivot" value="0 0" />
-					<attribute name="Image Rect" value="16 0 32 16" />
-					<attribute name="Border" value="4 4 4 4" />
-					<attribute name="Hover Image Offset" value="0 16" />
-					<attribute name="Pressed Image Offset" value="16 0" />
-					<attribute name="Pressed Child Offset" value="-1 1" />
-					<element type="Text">
-						<attribute name="Min Anchor" value="0.5 0.5" />
-						<attribute name="Max Anchor" value="0.5 0.5" />
-						<attribute name="Pivot" value="0.5 0.5" />
-						<attribute name="Top Left Color" value="0.85 0.85 0.85 1" />
-						<attribute name="Top Right Color" value="0.85 0.85 0.85 1" />
-						<attribute name="Bottom Left Color" value="0.85 0.85 0.85 1" />
-						<attribute name="Bottom Right Color" value="0.85 0.85 0.85 1" />
-						<attribute name="Font Size" value="48" />
-						<attribute name="Text" value="PLAY" />
-					</element>
-				</element>
-				<element type="Button">
-					<attribute name="Name" value="ButtonHowTo" />
-					<attribute name="Min Size" value="0 80" />
-					<attribute name="Pivot" value="0 0" />
-					<attribute name="Is Visible" value="false" />
-					<attribute name="Image Rect" value="16 0 32 16" />
-					<attribute name="Border" value="4 4 4 4" />
-					<attribute name="Hover Image Offset" value="0 16" />
-					<attribute name="Pressed Image Offset" value="16 0" />
-					<attribute name="Pressed Child Offset" value="-1 1" />
-					<element type="BorderImage">
-						<attribute name="Size" value="434 59" />
-						<attribute name="Min Anchor" value="0.5 0.5" />
-						<attribute name="Max Anchor" value="0.5 0.5" />
-						<attribute name="Pivot" value="0.5 0.5" />
-						<attribute name="Texture" value="Texture2D;" />
-						<attribute name="Image Rect" value="0 0 256 64" />
-					</element>
-				</element>
-				<element type="Button">
-					<attribute name="Name" value="ButtonCredits" />
-					<attribute name="Min Size" value="0 80" />
-					<attribute name="Pivot" value="0 0" />
-					<attribute name="Is Visible" value="false" />
-					<attribute name="Image Rect" value="16 0 32 16" />
-					<attribute name="Border" value="4 4 4 4" />
-					<attribute name="Hover Image Offset" value="0 16" />
-					<attribute name="Pressed Image Offset" value="16 0" />
-					<attribute name="Pressed Child Offset" value="-1 1" />
-					<element type="BorderImage">
-						<attribute name="Size" value="369 59" />
-						<attribute name="Min Anchor" value="0.5 0.5" />
-						<attribute name="Max Anchor" value="0.5 0.5" />
-						<attribute name="Pivot" value="0.5 0.5" />
-						<attribute name="Texture" value="Texture2D;" />
-						<attribute name="Image Rect" value="0 0 256 64" />
-					</element>
-				</element>
-				<element type="Button">
-					<attribute name="Name" value="ButtonExit" />
-					<attribute name="Min Size" value="0 80" />
-					<attribute name="Pivot" value="0 0" />
-					<attribute name="Image Rect" value="16 0 32 16" />
-					<attribute name="Border" value="4 4 4 4" />
-					<attribute name="Hover Image Offset" value="0 16" />
-					<attribute name="Pressed Image Offset" value="16 0" />
-					<attribute name="Pressed Child Offset" value="-1 1" />
-					<element type="Text">
-						<attribute name="Min Anchor" value="0.5 0.5" />
-						<attribute name="Max Anchor" value="0.5 0.5" />
-						<attribute name="Pivot" value="0.5 0.5" />
-						<attribute name="Top Left Color" value="0.85 0.85 0.85 1" />
-						<attribute name="Top Right Color" value="0.85 0.85 0.85 1" />
-						<attribute name="Bottom Left Color" value="0.85 0.85 0.85 1" />
-						<attribute name="Bottom Right Color" value="0.85 0.85 0.85 1" />
-						<attribute name="Font Size" value="48" />
-						<attribute name="Text" value="QUIT" />
-					</element>
+				<attribute name="Image Rect" value="16 0 32 16" />
+				<attribute name="Border" value="4 4 4 4" />
+				<attribute name="Hover Image Offset" value="0 16" />
+				<attribute name="Pressed Image Offset" value="16 0" />
+				<attribute name="Pressed Child Offset" value="-1 1" />
+				<element type="Text">
+					<attribute name="Min Anchor" value="0.5 0.5" />
+					<attribute name="Max Anchor" value="0.5 0.5" />
+					<attribute name="Pivot" value="0.5 0.5" />
+					<attribute name="Top Left Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Top Right Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Bottom Left Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Bottom Right Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Font Size" value="48" />
+					<attribute name="Text" value="QUIT" />
 				</element>
 			</element>
 		</element>
-	</element>
-	<element>
-		<attribute name="Name" value="Loading" />
-		<attribute name="Size" value="1280 720" />
-		<attribute name="Max Anchor" value="1 1" />
-		<attribute name="Pivot" value="0 0" />
-		<attribute name="Enable Anchor" value="true" />
-		<attribute name="Is Visible" value="false" />
-		<element type="BorderImage">
-			<attribute name="Name" value="bg" />
-			<attribute name="Size" value="1280 0" />
-			<attribute name="Max Anchor" value="1 1" />
-			<attribute name="Pivot" value="0 0" />
-			<attribute name="Enable Anchor" value="true" />
-			<attribute name="Color" value="0.05 0 0 1" />
-			<attribute name="Top Left Color" value="0.05 0 0 1" />
-			<attribute name="Top Right Color" value="0.05 0 0 1" />
-			<attribute name="Bottom Left Color" value="0.05 0 0 1" />
-			<attribute name="Bottom Right Color" value="0.05 0 0 1" />
-			<attribute name="Layout Mode" value="Vertical" />
-			<attribute name="Texture" value="Texture2D;" />
-			<attribute name="Image Rect" value="0 0 1097 653" />
-		</element>
-	</element>
-	<element>
-		<attribute name="Name" value="MixerScreen" />
-		<attribute name="Size" value="1280 720" />
-		<attribute name="Max Anchor" value="1 1" />
-		<attribute name="Pivot" value="0 0" />
-		<attribute name="Enable Anchor" value="true" />
 	</element>
 	<element type="Text" style="DebugHudText">
 		<attribute name="Pivot" value="0 0" />
@@ -318,7 +253,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading resource Shaders/GLSL/Basic.glsl" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Linked vertex shader Bloom() and pixel shader Bloom(BLURV)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -330,7 +265,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Compiled vertex shader Basic(DIFFMAP VERTEXCOLOR)" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled pixel shader Bloom(COMBINE)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -342,7 +277,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Compiled pixel shader Basic(DIFFMAP VERTEXCOLOR)" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Linked vertex shader Bloom() and pixel shader Bloom(COMBINE)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -354,7 +289,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Linked vertex shader Basic(DIFFMAP VERTEXCOLOR) and pixel shader Basic(DIFFMAP VERTEXCOLOR)" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Loading resource Shaders/GLSL/CopyFramebuffer.glsl" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -366,7 +301,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Compiled pixel shader Basic(ALPHAMAP VERTEXCOLOR)" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled vertex shader CopyFramebuffer()" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -378,7 +313,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Linked vertex shader Basic(DIFFMAP VERTEXCOLOR) and pixel shader Basic(ALPHAMAP VERTEXCOLOR)" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled pixel shader CopyFramebuffer()" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -390,7 +325,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading resource UI/ggj2024-laugh/screen_loading.xml" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Linked vertex shader CopyFramebuffer() and pixel shader CopyFramebuffer()" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -402,19 +337,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading UI layout UI/ggj2024-laugh/screen_loading.xml" />
-					</element>
-					<element type="Text" style="ConsoleErrorText">
-						<attribute name="Pivot" value="0 0" />
-						<attribute name="Color" value="1 0 0 1" />
-						<attribute name="Top Left Color" value="1 0 0 1" />
-						<attribute name="Top Right Color" value="1 0 0 1" />
-						<attribute name="Bottom Left Color" value="1 0 0 1" />
-						<attribute name="Bottom Right Color" value="1 0 0 1" />
-						<attribute name="Is Enabled" value="true" />
-						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
-						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] ERROR: Could not find resource Urho2D/duality/screens/tela_inicial.png" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Loading resource Shaders/GLSL/Basic.glsl" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -426,7 +349,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: loading done!" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled vertex shader Basic(DIFFMAP VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -438,7 +361,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading resource UI/ggj2024-laugh/screen_game.xml" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled pixel shader Basic(DIFFMAP VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -450,7 +373,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading UI layout UI/ggj2024-laugh/screen_game.xml" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Linked vertex shader Basic(DIFFMAP VERTEXCOLOR) and pixel shader Basic(DIFFMAP VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -462,7 +385,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:37 2024] DEBUG: Loading resource Urho2D/ggj2024-laugh/bg.png" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled pixel shader Basic(ALPHAMAP VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -474,7 +397,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:39 2024] DEBUG: Compiled vertex shader Basic(VERTEXCOLOR)" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Linked vertex shader Basic(DIFFMAP VERTEXCOLOR) and pixel shader Basic(ALPHAMAP VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -486,7 +409,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:39 2024] DEBUG: Compiled pixel shader Basic(VERTEXCOLOR)" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:58 2024] DEBUG: Compiled vertex shader Basic(VERTEXCOLOR)" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -498,7 +421,19 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Wed Jan 24 21:28:39 2024] DEBUG: Linked vertex shader Basic(VERTEXCOLOR) and pixel shader Basic(VERTEXCOLOR)" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:58 2024] DEBUG: Compiled pixel shader Basic(VERTEXCOLOR)" />
+					</element>
+					<element type="Text" style="ConsoleDebugText">
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Color" value="1 0.6 0 1" />
+						<attribute name="Top Left Color" value="1 0.6 0 1" />
+						<attribute name="Top Right Color" value="1 0.6 0 1" />
+						<attribute name="Bottom Left Color" value="1 0.6 0 1" />
+						<attribute name="Bottom Right Color" value="1 0.6 0 1" />
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
+						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
+						<attribute name="Text" value="[Thu Jan 25 23:53:58 2024] DEBUG: Linked vertex shader Basic(VERTEXCOLOR) and pixel shader Basic(VERTEXCOLOR)" />
 					</element>
 				</element>
 			</element>
