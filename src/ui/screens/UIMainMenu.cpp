@@ -35,9 +35,11 @@ namespace Laugh {
 	void UIMainMenu::Setup()
 	{
 		auto buttonPlay = instanceRoot_->GetChild("ButtonPlay", true);
+		buttonPlay->SetStyleAuto();
 		SubscribeToEvent(buttonPlay, E_RELEASED, URHO3D_HANDLER(UIMainMenu, HandlePlayButton));
 
 		auto buttonExit = instanceRoot_->GetChild("ButtonExit", true);
+		buttonExit->SetStyleAuto();
 		SubscribeToEvent(buttonExit, E_RELEASED, URHO3D_HANDLER(UIMainMenu, HandleExitButton));
 	}
 
@@ -62,6 +64,8 @@ namespace Laugh {
 		World::instance_->topRightArm_->SetOnScreen(false);
 		World::instance_->botLeftArm_->SetOnScreen(false);
 		World::instance_->botRightArm_->SetOnScreen(false);
+
+		World::instance_->mixer_->RemoveLid();
 	}
 
 	void UIMainMenu::HandleExitButton(StringHash, VariantMap& eventData)

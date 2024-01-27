@@ -23,6 +23,7 @@
 #include "WorldEffects.h"
 #include "dataObjs/RecipeData.h"
 #include "TentacleArm.h"
+#include "Mixer.h"
 
 using namespace Urho3D;
 
@@ -51,6 +52,8 @@ namespace Laugh {
 		WorldEffects effects_;
 
 		SharedPtr<TentacleArm> topLeftArm_, topRightArm_, botLeftArm_, botRightArm_;
+
+		Mixer* mixer_;
 
 		/// <summary>
 		/// singleton, initialized on MainApp startup

@@ -5,14 +5,16 @@
 	<attribute name="Max Anchor" value="1 1" />
 	<attribute name="Pivot" value="0 0" />
 	<attribute name="Enable Anchor" value="true" />
-	<element type="ListView">
-		<attribute name="Name" value="ingsListView" />
-		<attribute name="Size" value="808 204" />
+	<element type="ScrollView">
+		<attribute name="Name" value="ingsScrollView" />
+		<attribute name="Position" value="-960 -260" />
+		<attribute name="Size" value="1920 240" />
 		<attribute name="Min Anchor" value="0.5 1" />
 		<attribute name="Max Anchor" value="0.5 1" />
-		<attribute name="Pivot" value="0.5 1" />
+		<attribute name="Pivot" value="0 0" />
+		<attribute name="Auto Show/Hide Scrollbars" value="false" />
 		<element type="ScrollBar" internal="true" style="none">
-			<attribute name="Size" value="808 16" />
+			<attribute name="Size" value="40 16" />
 			<attribute name="Min Anchor" value="0 1" />
 			<attribute name="Max Anchor" value="0 1" />
 			<attribute name="Pivot" value="0 1" />
@@ -21,6 +23,7 @@
 			<attribute name="Top Right Color" value="0 0 0 0" />
 			<attribute name="Bottom Left Color" value="0 0 0 0" />
 			<attribute name="Bottom Right Color" value="0 0 0 0" />
+			<attribute name="Is Visible" value="false" />
 			<element type="Button" internal="true" style="none">
 				<attribute name="Size" value="16 16" />
 				<attribute name="Pivot" value="0 0" />
@@ -30,7 +33,7 @@
 			</element>
 			<element type="Slider" internal="true" style="none">
 				<attribute name="Position" value="16 0" />
-				<attribute name="Size" value="776 16" />
+				<attribute name="Size" value="8 16" />
 				<attribute name="Pivot" value="0 0" />
 				<attribute name="Image Rect" value="64 0 80 16" />
 				<attribute name="Border" value="4 4 4 4" />
@@ -42,7 +45,7 @@
 				</element>
 			</element>
 			<element type="Button" internal="true" style="none">
-				<attribute name="Position" value="792 0" />
+				<attribute name="Position" value="24 0" />
 				<attribute name="Size" value="16 16" />
 				<attribute name="Pivot" value="0 0" />
 				<attribute name="Border" value="4 4 4 4" />
@@ -51,7 +54,7 @@
 			</element>
 		</element>
 		<element type="ScrollBar" internal="true" style="none">
-			<attribute name="Size" value="16 204" />
+			<attribute name="Size" value="16 240" />
 			<attribute name="Min Anchor" value="1 0" />
 			<attribute name="Max Anchor" value="1 0" />
 			<attribute name="Pivot" value="1 0" />
@@ -60,6 +63,7 @@
 			<attribute name="Top Right Color" value="0 0 0 0" />
 			<attribute name="Bottom Left Color" value="0 0 0 0" />
 			<attribute name="Bottom Right Color" value="0 0 0 0" />
+			<attribute name="Is Visible" value="false" />
 			<element type="Button" internal="true" style="none">
 				<attribute name="Size" value="16 16" />
 				<attribute name="Pivot" value="0 0" />
@@ -69,7 +73,7 @@
 			</element>
 			<element type="Slider" internal="true" style="none">
 				<attribute name="Position" value="0 16" />
-				<attribute name="Size" value="16 172" />
+				<attribute name="Size" value="16 208" />
 				<attribute name="Pivot" value="0 0" />
 				<attribute name="Image Rect" value="64 0 80 16" />
 				<attribute name="Border" value="4 4 4 4" />
@@ -81,7 +85,7 @@
 				</element>
 			</element>
 			<element type="Button" internal="true" style="none">
-				<attribute name="Position" value="0 188" />
+				<attribute name="Position" value="0 224" />
 				<attribute name="Size" value="16 16" />
 				<attribute name="Pivot" value="0 0" />
 				<attribute name="Border" value="4 4 4 4" />
@@ -90,35 +94,39 @@
 			</element>
 		</element>
 		<element type="BorderImage" internal="true" style="none">
-			<attribute name="Pivot" value="0 0" />
+			<attribute name="Name" value="SV_ItemContainer_ings" />
+			<attribute name="Min Anchor" value="0.5 0" />
+			<attribute name="Max Anchor" value="0.5 0" />
+			<attribute name="Pivot" value="0.5 0" />
 			<attribute name="Clip Border" value="2 2 2 2" />
+			<attribute name="Color" value="1 1 1 0" />
+			<attribute name="Top Left Color" value="1 1 1 0" />
+			<attribute name="Top Right Color" value="1 1 1 0" />
+			<attribute name="Bottom Left Color" value="1 1 1 0" />
+			<attribute name="Bottom Right Color" value="1 1 1 0" />
+			<attribute name="Layout Mode" value="Horizontal" />
+			<attribute name="Layout Spacing" value="20" />
+			<attribute name="Layout Border" value="20 20 20 20" />
 			<attribute name="Image Rect" value="64 16 80 32" />
 			<attribute name="Border" value="4 4 4 4" />
-			<element internal="true" style="none">
-				<attribute name="Name" value="LV_ItemContainer_ings" />
-				<attribute name="Min Anchor" value="0.5 0" />
-				<attribute name="Max Anchor" value="0.5 0" />
-				<attribute name="Pivot" value="0.5 0" />
-				<attribute name="Layout Mode" value="Horizontal" />
-				<element type="Button">
-					<attribute name="Name" value="ingEntry_base" />
-					<attribute name="Min Size" value="200 200" />
-					<attribute name="Max Size" value="200 200" />
-					<attribute name="Pivot" value="0 0" />
-					<attribute name="Is Visible" value="false" />
-					<attribute name="Image Rect" value="16 0 32 16" />
-					<attribute name="Border" value="4 4 4 4" />
-					<attribute name="Hover Image Offset" value="0 16" />
-					<attribute name="Pressed Image Offset" value="16 0" />
-					<element type="Sprite" style="Sprite">
-						<attribute name="Name" value="ingSprite" />
-						<attribute name="Size" value="150 150" />
-						<attribute name="Hotspot" value="75 75" />
-						<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/imp_body.png" />
-						<attribute name="Image Rect" value="0 0 124 131" />
-						<attribute name="Horiz Alignment" value="Center" />
-						<attribute name="Vert Alignment" value="Center" />
-					</element>
+			<element type="Button">
+				<attribute name="Name" value="ingEntry_base" />
+				<attribute name="Min Size" value="200 200" />
+				<attribute name="Max Size" value="200 200" />
+				<attribute name="Pivot" value="0 0" />
+				<attribute name="Is Visible" value="false" />
+				<attribute name="Image Rect" value="16 0 32 16" />
+				<attribute name="Border" value="4 4 4 4" />
+				<attribute name="Hover Image Offset" value="0 16" />
+				<attribute name="Pressed Image Offset" value="16 0" />
+				<element type="Sprite" style="Sprite">
+					<attribute name="Name" value="ingSprite" />
+					<attribute name="Size" value="150 150" />
+					<attribute name="Hotspot" value="75 75" />
+					<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/imp_body.png" />
+					<attribute name="Image Rect" value="0 0 124 131" />
+					<attribute name="Horiz Alignment" value="Center" />
+					<attribute name="Vert Alignment" value="Center" />
 				</element>
 			</element>
 		</element>

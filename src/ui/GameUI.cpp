@@ -31,7 +31,8 @@ namespace Laugh {
 	{
 		auto cache = context_->GetSubsystem<ResourceCache>();
 		auto ui = context_->GetSubsystem<UI>();
-		ui->GetRoot()->SetDefaultStyle(cache->GetResource<XMLFile>("UI/DefaultStyle.xml"));
+		//ui->GetRoot()->SetDefaultStyle(cache->GetResource<XMLFile>("UI/DefaultStyle.xml"));
+		ui->GetRoot()->SetDefaultStyle(cache->GetResource<XMLFile>("UI/ggj2024-laugh/style_laugh.xml"));
 
 		ShowScreen<UIMainMenu>();
 	}

@@ -41,7 +41,6 @@ namespace Laugh {
 		auto ui = context_->GetSubsystem<UI>();
 		auto cache = context_->GetSubsystem<ResourceCache>();
 
-		auto styleFile = cache->GetResource<XMLFile>("UI/DefaultStyle.xml");
 		// create scenario stuff parent... and the scenario stuff
 		scenarioStuffParent_ = World::instance_->dynamicContentParent_->CreateChild("uiMixer_scenario");
 
@@ -49,13 +48,14 @@ namespace Laugh {
 
 		// find ingredient buttons container
 		// create buttons for each ingredient, and add the event to each of them
-		auto ingsContainer = instanceRoot_->GetChild("LV_ItemContainer_ings", true);
+		auto ingsContainer = instanceRoot_->GetChild("SV_ItemContainer_ings", true);
 		auto ingButtonXml = cache->GetResource<XMLFile>("UI/ggj2024-laugh/elements/ingEntry_base.xml")->GetRoot();
 
 		auto ingredients = World::instance_->recipesData_->ingredients_;
 		for (auto ingEntry = ingredients.Begin(); ingEntry != ingredients.End();) {
 			auto ingData = ingEntry->second_;
-			auto createdBtn = ingsContainer->LoadChildXML(ingButtonXml, styleFile);
+			auto createdBtn = ingsContainer->LoadChildXML(ingButtonXml, nullptr);
+			createdBtn->SetStyleAuto();
 
 			auto btnSprite = static_cast<Sprite*>(createdBtn->GetChild("ingSprite", true));
 			btnSprite->SetTexture(cache->GetResource<Texture2D>(ingData.imageFilePath_));

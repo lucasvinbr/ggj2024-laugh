@@ -20,6 +20,7 @@ namespace Laugh {
         effects_(c),
         curGameState_(GAMESTATE_ENDED)
     {
+        mixer_ = nullptr;
         instance_ = this;
     }
 
@@ -138,6 +139,9 @@ namespace Laugh {
         topRightArm_->Setup(true, false);
         botLeftArm_->Setup(false, true);
         botRightArm_->Setup(false, false);
+
+        auto mixerNode = dynamicContentParent_->CreateChild("mixer");
+        mixer_ = mixerNode->CreateComponent<Mixer>();
     }
 
     void World::Cleanup()
