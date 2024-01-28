@@ -1,11 +1,15 @@
 #pragma once
 #include "Mixer.h"
+#include "World.h"
+#include "ui/GameUI.h"
 #include "GameConsts.h"
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Graphics/Graphics.h>
 #include <Urho3D/Graphics/Texture2D.h>
 #include <Urho3D/Scene/ObjectAnimation.h>
 #include <Urho3D/Scene/ValueAnimation.h>
+#include <Urho3D/Scene/SceneEvents.h>
+#include "ui/screens/UIGotItem.h"
 
 using namespace Urho3D;
 
@@ -35,6 +39,14 @@ namespace Laugh {
         
     }
 
+    void Mixer::PlaceLid()
+    {
+        if (mixerState_ != IDLE_LID_ON && mixerState_ != PUTTING_LID) {
+            mixerState_ = PUTTING_LID;
+            timeAnimating_ = 0.0f;
+        }
+    }
+
     void Mixer::RemoveLid()
     {
         if (mixerState_ != IDLE_LID_OFF && mixerState_ != REMOVING_LID) {
@@ -54,11 +66,68 @@ namespace Laugh {
             scaleAnim->SetKeyFrame(0.2f, Vector3(1.0f, 1.1f, 1.0f));
             scaleAnim->SetKeyFrame(0.3f, Vector3::ONE);
             glassSprite_->GetNode()->SetAttributeAnimation("Scale", scaleAnim, WM_ONCE);
+            
         }
+    }
+
+    void Mixer::StartMixing()
+    {
+        // place all ingredients inside mixer then start anim!
+        auto& ingredients = World::instance_->recipesData_->ingredients_;
+        auto& pickedIngs = World::instance_->pickedIngredients_;
+        auto cache = GetSubsystem<ResourceCache>();
+
+        for (auto ingEntry = pickedIngs.Begin(); ingEntry != pickedIngs.End();) {
+            auto& ingData = ingredients[*ingEntry];
+
+            PlaceIngredient(cache->GetResource<Sprite2D>(ingData.imageFilePath_));
+
+            ++ingEntry;
+        }
+
+        // place lid, then start mix anim!
+        // subscribe to anim event, so that we know when we're done with the lid
+        using namespace MixerAnimDone;
+        SubscribeToEvent(E_MIXER_ANIM_DONE, URHO3D_HANDLER(Mixer, OnDoneAnimating));
+
+        PlaceLid();
     }
 
     void Mixer::PlaceIngredient(Sprite2D* ingSprite)
     {
+        auto glassNode = glassSprite_->GetNode();
+        auto cache = GetSubsystem<ResourceCache>();
+
+        auto newIngNode = glassNode->CreateChild("placedIng");
+        auto ingBubbleSprite = newIngNode->CreateComponent<StaticSprite2D>();
+        ingBubbleSprite->SetSprite(cache->GetResource<Sprite2D>("Urho2D/ggj2024-laugh/bolha_0.png"));
+        ingBubbleSprite->SetLayer(SPRITELAYER_INSIDE_MIXER);
+        
+        auto innerIngNode = newIngNode->CreateChild("ingIcon");
+        auto ingIconSprite = innerIngNode->CreateComponent<StaticSprite2D>();
+        ingIconSprite->SetSprite(ingSprite);
+        ingIconSprite->SetLayer(SPRITELAYER_INSIDE_MIXER);
+        innerIngNode->SetScale(0.4f);
+
+        ingredientSprites_.Push(ingBubbleSprite);
+
+        newIngNode->SetPosition(Vector3(Random() - 0.5f, Random() - 0.5f));
+    }
+
+    void Mixer::Cleanup()
+    {
+        for (auto placedIngEntry = ingredientSprites_.Begin(); placedIngEntry != ingredientSprites_.End();) {
+            (*placedIngEntry)->GetNode()->Remove();
+
+            ++placedIngEntry;
+        }
+
+        ingredientSprites_.Clear();
+
+        lidSprite_->GetNode()->SetPosition(startLidPos_);
+        glassSprite_->GetNode()->SetPosition(startGlassPos_);
+        baseSprite_->GetNode()->SetPosition(startBasePos_);
+        btnSprite_->GetNode()->SetPosition(startBtnPos_);
     }
 
     void Mixer::Start()
@@ -134,6 +203,7 @@ namespace Laugh {
             lidSprite_->GetNode()->SetPosition(startLidPos_.Lerp(lidRemovedPos_, timeAnimating_ / LID_ANIM_TIME));
             lidSprite_->SetAlpha(1.0f - timeAnimating_ / LID_ANIM_TIME);
             if (timeAnimating_ >= LID_ANIM_TIME) {
+                URHO3D_LOGDEBUG("done REMOVING_LID");
                 mixerState_ = IDLE_LID_OFF;
                 VariantMap doneAnimEventMap = VariantMap();
                 doneAnimEventMap[P_FINISHED_ANIM] = "RemoveLid";
@@ -144,6 +214,19 @@ namespace Laugh {
             lidSprite_->GetNode()->SetPosition(lidRemovedPos_.Lerp(startLidPos_, timeAnimating_ / LID_ANIM_TIME));
             lidSprite_->SetAlpha(timeAnimating_ / LID_ANIM_TIME);
             if (timeAnimating_ >= LID_ANIM_TIME) {
+                URHO3D_LOGDEBUG("done PUTTING_LID");
+                // scale animation
+                SharedPtr<ValueAnimation> scaleAnim(new ValueAnimation(context_));
+                // Use spline interpolation method
+                scaleAnim->SetInterpolationMethod(IM_SPLINE);
+                // Set spline tension
+                scaleAnim->SetSplineTension(1.7f);
+                scaleAnim->SetKeyFrame(0.0f, Vector3::ONE);
+                scaleAnim->SetKeyFrame(0.1f, Vector3(1.05f, 1.0f, 1.0f));
+                scaleAnim->SetKeyFrame(0.2f, Vector3(1.0f, 1.1f, 1.0f));
+                scaleAnim->SetKeyFrame(0.3f, Vector3::ONE);
+                glassSprite_->GetNode()->SetAttributeAnimation("Scale", scaleAnim, WM_ONCE);
+
                 mixerState_ = IDLE_LID_ON;
                 VariantMap doneAnimEventMap = VariantMap();
                 doneAnimEventMap[P_FINISHED_ANIM] = "PutLid";
@@ -160,12 +243,13 @@ namespace Laugh {
                 curIntensity = Lerp(startShakeIntensity, finalShakeIntensity, timeAnimating_ / MIX_ANIM_TIME);
             }
 
-            lidSprite_->GetNode()->SetPosition(startLidPos_ + Vector3(Random(), Random()) * curIntensity);
-            glassSprite_->GetNode()->SetPosition(startGlassPos_ + Vector3(Random(), Random()) * curIntensity);
-            baseSprite_->GetNode()->SetPosition(startBasePos_ + Vector3(Random(), Random()) * curIntensity);
-            btnSprite_->GetNode()->SetPosition(startBtnPos_ + Vector3(Random(), Random()) * curIntensity);
+            lidSprite_->GetNode()->SetPosition(startLidPos_ + Vector3(Random() - 0.5f, Random() - 0.5f) * curIntensity);
+            glassSprite_->GetNode()->SetPosition(startGlassPos_ + Vector3(Random() - 0.5f, Random() - 0.5f) * curIntensity);
+            baseSprite_->GetNode()->SetPosition(startBasePos_ + Vector3(Random() - 0.5f, Random() - 0.5f) * curIntensity);
+            btnSprite_->GetNode()->SetPosition(startBtnPos_ + Vector3(Random() - 0.5f, Random() - 0.5f) * curIntensity);
 
-            if (timeAnimating_ >= LID_ANIM_TIME) {
+            if (timeAnimating_ >= MIX_ANIM_TIME) {
+                URHO3D_LOGDEBUG("done SHAKING");
                 mixerState_ = IDLE_LID_ON;
                 VariantMap doneAnimEventMap = VariantMap();
                 doneAnimEventMap[P_FINISHED_ANIM] = "Mix";
@@ -175,6 +259,36 @@ namespace Laugh {
             break;
         default:
             break;
+        }
+    }
+
+    void Mixer::OnDoneAnimating(StringHash, VariantMap& eventData)
+    {
+        using namespace MixerAnimDone;
+
+        auto& animName = eventData[P_FINISHED_ANIM].GetString();
+
+        // it's a one-shot event
+        UnsubscribeFromEvent(this, E_MIXER_ANIM_DONE);
+
+        if (animName == "PutLid") {
+            // done putting lid, let's start mixing
+            mixerState_ = SHAKING;
+            timeAnimating_ = 0.0f;
+
+            // subscribe to anim event, so that we know when we're done mixing
+            SubscribeToEvent(E_MIXER_ANIM_DONE, URHO3D_HANDLER(Mixer, OnDoneAnimating));
+        }
+        else if (animName == "Mix") {
+            // done mixing, open lid
+            RemoveLid();
+
+            // subscribe to anim event, so that we know when we're done removing the lid
+            SubscribeToEvent(E_MIXER_ANIM_DONE, URHO3D_HANDLER(Mixer, OnDoneAnimating));
+        }
+        else if (animName == "RemoveLid") {
+            // show got item UI with result
+            GameUI::instance_->ShowScreen<UIGotItem>();
         }
     }
 

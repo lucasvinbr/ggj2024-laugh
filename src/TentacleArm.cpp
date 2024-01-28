@@ -13,8 +13,12 @@ namespace Laugh {
     {
         armSprite_ = nullptr;
         attachmentPoint_ = nullptr;
+        grabbedItemSprite_ = nullptr;
         breatheAnimTime_ = 0.0f;
+        appearAnimTime_ = 0.0f;
         doBreathingAnim_ = true;
+        isOnScreen_ = true;
+        breatheAnimIntensity_ = 0.15f;
 
         SetUpdateEventMask(USE_UPDATE);
     }
@@ -68,10 +72,32 @@ namespace Laugh {
             offScreenPos_ = node_->GetPosition() + Vector3::RIGHT * tentaWidth * 2.0f;
         }
 
+        attachmentPoint_ = scalerNode->CreateChild("attachmentPt");
+        auto attachmentBubble = attachmentPoint_->CreateComponent<StaticSprite2D>();
+        attachmentBubble->SetSprite(cache->GetResource<Sprite2D>("Urho2D/ggj2024-laugh/bolha_0.png"));
+        attachmentBubble->SetLayer(SPRITELAYER_MIXER);
+        attachmentPoint_->Translate(Vector3((isLeft ? tentaWidth : -tentaWidth) * 1.0f, (isTop ? -tentaHeight : tentaHeight)) * 0.7f);
+        
+        auto grabbedItemNode = attachmentPoint_->CreateChild("grabbedItem");
+        grabbedItemSprite_ = grabbedItemNode->CreateComponent<StaticSprite2D>();
+        grabbedItemSprite_->SetLayer(SPRITELAYER_BEHIND_MIXER);
+        grabbedItemNode->SetScale(0.4f);
+
+        attachmentPoint_->SetEnabledRecursive(false);
     }
 
     void TentacleArm::GrabSprite(Sprite2D* spriteToGrab)
     {
+        if (!spriteToGrab) {
+            breatheAnimIntensity_ = 0.15f;
+            attachmentPoint_->SetEnabledRecursive(false);
+        }
+        else {
+            breatheAnimIntensity_ = 0.07f;
+            attachmentPoint_->SetEnabledRecursive(true);
+        }
+
+        grabbedItemSprite_->SetSprite(spriteToGrab);
     }
 
     void TentacleArm::SpecialGrabLidAnim()
@@ -87,7 +113,7 @@ namespace Laugh {
         }
 
         if(doBreathingAnim_){
-            node_->SetScale(Vector3(1.0f + sin(breatheAnimTime_ * 2.0f) * 0.15f, 1.0f + sin(breatheAnimTime_ * 1.0f) * 0.15f, 1.0f));
+            node_->SetScale(Vector3(1.0f + sin(breatheAnimTime_ * 2.0f) * breatheAnimIntensity_, 1.0f + sin(breatheAnimTime_ * 1.0f) * breatheAnimIntensity_, 1.0f));
         }
         else {
             node_->SetScale(Vector3::ONE);
@@ -97,12 +123,20 @@ namespace Laugh {
             if (node_->GetPosition() != onScreenPos_) {
                 appearAnimTime_ += timeStep;
                 node_->SetPosition(offScreenPos_.Lerp(onScreenPos_, appearAnimTime_ / ANIM_ENTER_DURATION));
+
+                if (appearAnimTime_ >= ANIM_ENTER_DURATION) {
+                    node_->SetPosition(onScreenPos_);
+                }
             }
         }
         else {
             if (node_->GetPosition() != offScreenPos_) {
                 appearAnimTime_ += timeStep;
                 node_->SetPosition(onScreenPos_.Lerp(offScreenPos_, appearAnimTime_ / ANIM_ENTER_DURATION));
+
+                if (appearAnimTime_ >= ANIM_ENTER_DURATION) {
+                    node_->SetPosition(offScreenPos_);
+                }
             }
         }
     }

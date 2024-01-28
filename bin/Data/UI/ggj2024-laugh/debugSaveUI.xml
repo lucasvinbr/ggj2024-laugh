@@ -7,6 +7,7 @@
 		<attribute name="Max Anchor" value="1 1" />
 		<attribute name="Pivot" value="0 0" />
 		<attribute name="Enable Anchor" value="true" />
+		<attribute name="Is Visible" value="false" />
 		<element type="BorderImage">
 			<attribute name="Name" value="bg" />
 			<attribute name="Size" value="1280 720" />
@@ -28,10 +29,10 @@
 				<attribute name="Min Size" value="0 80" />
 				<attribute name="Max Size" value="2147483647 400" />
 				<attribute name="Pivot" value="0 0" />
-				<attribute name="Image Rect" value="16 0 32 16" />
-				<attribute name="Border" value="4 4 4 4" />
-				<attribute name="Hover Image Offset" value="0 16" />
-				<attribute name="Pressed Image Offset" value="16 0" />
+				<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+				<attribute name="Image Rect" value="0 0 256 256" />
+				<attribute name="Hover Image Offset" value="0 2" />
+				<attribute name="Pressed Image Offset" value="2 0" />
 				<attribute name="Pressed Child Offset" value="-1 1" />
 				<element type="Text">
 					<attribute name="Min Anchor" value="0.5 0.5" />
@@ -54,10 +55,10 @@
 				<attribute name="Min Anchor" value="0 1" />
 				<attribute name="Max Anchor" value="0 1" />
 				<attribute name="Pivot" value="0 1" />
-				<attribute name="Image Rect" value="16 0 32 16" />
-				<attribute name="Border" value="4 4 4 4" />
-				<attribute name="Hover Image Offset" value="0 16" />
-				<attribute name="Pressed Image Offset" value="16 0" />
+				<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+				<attribute name="Image Rect" value="0 0 256 256" />
+				<attribute name="Hover Image Offset" value="0 2" />
+				<attribute name="Pressed Image Offset" value="2 0" />
 				<attribute name="Pressed Child Offset" value="-1 1" />
 				<element type="Text">
 					<attribute name="Min Anchor" value="0.5 0.5" />
@@ -69,6 +70,253 @@
 					<attribute name="Bottom Right Color" value="0.85 0.85 0.85 1" />
 					<attribute name="Font Size" value="48" />
 					<attribute name="Text" value="QUIT" />
+				</element>
+			</element>
+		</element>
+	</element>
+	<element>
+		<attribute name="Name" value="Loading" />
+		<attribute name="Size" value="1280 720" />
+		<attribute name="Max Anchor" value="1 1" />
+		<attribute name="Pivot" value="0 0" />
+		<attribute name="Enable Anchor" value="true" />
+		<attribute name="Is Visible" value="false" />
+		<element type="BorderImage">
+			<attribute name="Name" value="bg" />
+			<attribute name="Size" value="1280 0" />
+			<attribute name="Max Anchor" value="1 1" />
+			<attribute name="Pivot" value="0 0" />
+			<attribute name="Enable Anchor" value="true" />
+			<attribute name="Color" value="0.05 0 0 1" />
+			<attribute name="Top Left Color" value="0.05 0 0 1" />
+			<attribute name="Top Right Color" value="0.05 0 0 1" />
+			<attribute name="Bottom Left Color" value="0.05 0 0 1" />
+			<attribute name="Bottom Right Color" value="0.05 0 0 1" />
+			<attribute name="Layout Mode" value="Vertical" />
+			<attribute name="Texture" value="Texture2D;" />
+			<attribute name="Image Rect" value="0 0 1097 653" />
+		</element>
+	</element>
+	<element>
+		<attribute name="Name" value="MixerScreen" />
+		<attribute name="Size" value="1280 720" />
+		<attribute name="Max Anchor" value="1 1" />
+		<attribute name="Pivot" value="0 0" />
+		<attribute name="Enable Anchor" value="true" />
+		<element type="ScrollView">
+			<attribute name="Name" value="ingsScrollView" />
+			<attribute name="Position" value="-960 -260" />
+			<attribute name="Size" value="1920 240" />
+			<attribute name="Min Anchor" value="0.5 1" />
+			<attribute name="Max Anchor" value="0.5 1" />
+			<attribute name="Pivot" value="0 0" />
+			<attribute name="Auto Show/Hide Scrollbars" value="false" />
+			<element type="ScrollBar" internal="true" style="none">
+				<attribute name="Size" value="40 16" />
+				<attribute name="Min Anchor" value="0 1" />
+				<attribute name="Max Anchor" value="0 1" />
+				<attribute name="Pivot" value="0 1" />
+				<attribute name="Color" value="0 0 0 0" />
+				<attribute name="Top Left Color" value="0 0 0 0" />
+				<attribute name="Top Right Color" value="0 0 0 0" />
+				<attribute name="Bottom Left Color" value="0 0 0 0" />
+				<attribute name="Bottom Right Color" value="0 0 0 0" />
+				<attribute name="Is Visible" value="false" />
+				<element type="Button" internal="true" style="none">
+					<attribute name="Size" value="16 16" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+					<attribute name="Border" value="4 4 4 4" />
+					<attribute name="Hover Image Offset" value="0 16" />
+					<attribute name="Pressed Image Offset" value="64 0" />
+					<attribute name="Pressed Child Offset" value="-1 1" />
+				</element>
+				<element type="Slider" internal="true" style="none">
+					<attribute name="Position" value="16 0" />
+					<attribute name="Size" value="8 16" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Image Rect" value="64 0 80 16" />
+					<attribute name="Border" value="4 4 4 4" />
+					<element type="BorderImage" internal="true" style="none">
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Image Rect" value="16 0 32 16" />
+						<attribute name="Border" value="4 4 4 4" />
+						<attribute name="Hover Image Offset" value="0 16" />
+					</element>
+				</element>
+				<element type="Button" internal="true" style="none">
+					<attribute name="Position" value="24 0" />
+					<attribute name="Size" value="16 16" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+					<attribute name="Border" value="4 4 4 4" />
+					<attribute name="Hover Image Offset" value="0 16" />
+					<attribute name="Pressed Image Offset" value="64 0" />
+					<attribute name="Pressed Child Offset" value="-1 1" />
+				</element>
+			</element>
+			<element type="ScrollBar" internal="true" style="none">
+				<attribute name="Size" value="16 240" />
+				<attribute name="Min Anchor" value="1 0" />
+				<attribute name="Max Anchor" value="1 0" />
+				<attribute name="Pivot" value="1 0" />
+				<attribute name="Color" value="0 0 0 0" />
+				<attribute name="Top Left Color" value="0 0 0 0" />
+				<attribute name="Top Right Color" value="0 0 0 0" />
+				<attribute name="Bottom Left Color" value="0 0 0 0" />
+				<attribute name="Bottom Right Color" value="0 0 0 0" />
+				<attribute name="Is Visible" value="false" />
+				<element type="Button" internal="true" style="none">
+					<attribute name="Size" value="16 16" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+					<attribute name="Border" value="4 4 4 4" />
+					<attribute name="Hover Image Offset" value="0 16" />
+					<attribute name="Pressed Image Offset" value="64 0" />
+					<attribute name="Pressed Child Offset" value="-1 1" />
+				</element>
+				<element type="Slider" internal="true" style="none">
+					<attribute name="Position" value="0 16" />
+					<attribute name="Size" value="16 208" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Image Rect" value="64 0 80 16" />
+					<attribute name="Border" value="4 4 4 4" />
+					<element type="BorderImage" internal="true" style="none">
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Image Rect" value="16 0 32 16" />
+						<attribute name="Border" value="4 4 4 4" />
+						<attribute name="Hover Image Offset" value="0 16" />
+					</element>
+				</element>
+				<element type="Button" internal="true" style="none">
+					<attribute name="Position" value="0 224" />
+					<attribute name="Size" value="16 16" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+					<attribute name="Border" value="4 4 4 4" />
+					<attribute name="Hover Image Offset" value="0 16" />
+					<attribute name="Pressed Image Offset" value="64 0" />
+					<attribute name="Pressed Child Offset" value="-1 1" />
+				</element>
+			</element>
+			<element type="BorderImage" internal="true" style="none">
+				<attribute name="Name" value="SV_ItemContainer_ings" />
+				<attribute name="Min Anchor" value="0.5 0" />
+				<attribute name="Max Anchor" value="0.5 0" />
+				<attribute name="Pivot" value="0.5 0" />
+				<attribute name="Clip Border" value="2 2 2 2" />
+				<attribute name="Color" value="1 1 1 0" />
+				<attribute name="Top Left Color" value="1 1 1 0" />
+				<attribute name="Top Right Color" value="1 1 1 0" />
+				<attribute name="Bottom Left Color" value="1 1 1 0" />
+				<attribute name="Bottom Right Color" value="1 1 1 0" />
+				<attribute name="Layout Mode" value="Horizontal" />
+				<attribute name="Layout Spacing" value="20" />
+				<attribute name="Layout Border" value="20 20 20 20" />
+				<attribute name="Image Rect" value="64 16 80 32" />
+				<attribute name="Border" value="4 4 4 4" />
+				<attribute name="Hover Image Offset" value="16 16" />
+				<element type="Button">
+					<attribute name="Name" value="ingEntry_base" />
+					<attribute name="Min Size" value="200 200" />
+					<attribute name="Max Size" value="200 200" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Is Visible" value="false" />
+					<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+					<attribute name="Image Rect" value="16 0 32 16" />
+					<attribute name="Border" value="4 4 4 4" />
+					<attribute name="Hover Image Offset" value="0 16" />
+					<attribute name="Pressed Image Offset" value="16 0" />
+					<attribute name="Pressed Child Offset" value="-1 1" />
+					<element type="Sprite" style="Sprite">
+						<attribute name="Name" value="ingSprite" />
+						<attribute name="Size" value="150 150" />
+						<attribute name="Hotspot" value="75 75" />
+						<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/imp_body.png" />
+						<attribute name="Image Rect" value="0 0 124 131" />
+						<attribute name="Horiz Alignment" value="Center" />
+						<attribute name="Vert Alignment" value="Center" />
+					</element>
+				</element>
+				<element type="Button">
+					<attribute name="Name" value="ingEntry_base" />
+					<attribute name="Min Size" value="200 200" />
+					<attribute name="Max Size" value="200 200" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+					<attribute name="Image Rect" value="0 0 256 256" />
+					<attribute name="Hover Image Offset" value="0 2" />
+					<attribute name="Pressed Image Offset" value="2 0" />
+					<attribute name="Pressed Child Offset" value="-1 1" />
+					<element type="Sprite" style="Sprite">
+						<attribute name="Name" value="flour" />
+						<attribute name="Size" value="150 150" />
+						<attribute name="Hotspot" value="75 75" />
+						<attribute name="Texture" value="Texture2D;Urho2D/greenspiral.png" />
+						<attribute name="Image Rect" value="0 0 124 131" />
+						<attribute name="Horiz Alignment" value="Center" />
+						<attribute name="Vert Alignment" value="Center" />
+					</element>
+				</element>
+				<element type="Button">
+					<attribute name="Name" value="ingEntry_base" />
+					<attribute name="Min Size" value="200 200" />
+					<attribute name="Max Size" value="200 200" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+					<attribute name="Image Rect" value="0 0 256 256" />
+					<attribute name="Hover Image Offset" value="0 2" />
+					<attribute name="Pressed Image Offset" value="2 0" />
+					<attribute name="Pressed Child Offset" value="-1 1" />
+					<element type="Sprite" style="Sprite">
+						<attribute name="Name" value="fodase" />
+						<attribute name="Size" value="150 150" />
+						<attribute name="Hotspot" value="75 75" />
+						<attribute name="Texture" value="Texture2D;Urho2D/imp_all.png" />
+						<attribute name="Image Rect" value="0 0 124 131" />
+						<attribute name="Horiz Alignment" value="Center" />
+						<attribute name="Vert Alignment" value="Center" />
+					</element>
+				</element>
+				<element type="Button">
+					<attribute name="Name" value="ingEntry_base" />
+					<attribute name="Min Size" value="200 200" />
+					<attribute name="Max Size" value="200 200" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+					<attribute name="Image Rect" value="0 0 256 256" />
+					<attribute name="Hover Image Offset" value="0 2" />
+					<attribute name="Pressed Image Offset" value="2 0" />
+					<attribute name="Pressed Child Offset" value="-1 1" />
+					<element type="Sprite" style="Sprite">
+						<attribute name="Name" value="urho" />
+						<attribute name="Size" value="150 150" />
+						<attribute name="Hotspot" value="75 75" />
+						<attribute name="Texture" value="Texture2D;Textures/FishBoneLogo.png" />
+						<attribute name="Image Rect" value="0 0 124 131" />
+						<attribute name="Horiz Alignment" value="Center" />
+						<attribute name="Vert Alignment" value="Center" />
+					</element>
+				</element>
+				<element type="Button">
+					<attribute name="Name" value="ingEntry_base" />
+					<attribute name="Min Size" value="200 200" />
+					<attribute name="Max Size" value="200 200" />
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+					<attribute name="Image Rect" value="0 0 256 256" />
+					<attribute name="Hover Image Offset" value="0 2" />
+					<attribute name="Pressed Image Offset" value="2 0" />
+					<attribute name="Pressed Child Offset" value="-1 1" />
+					<element type="Sprite" style="Sprite">
+						<attribute name="Name" value="stretchable" />
+						<attribute name="Size" value="150 150" />
+						<attribute name="Hotspot" value="75 75" />
+						<attribute name="Texture" value="Texture2D;Urho2D/Stretchable.png" />
+						<attribute name="Image Rect" value="0 0 124 131" />
+						<attribute name="Horiz Alignment" value="Center" />
+						<attribute name="Vert Alignment" value="Center" />
+					</element>
 				</element>
 			</element>
 		</element>
@@ -253,7 +501,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Linked vertex shader Bloom() and pixel shader Bloom(BLURV)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:30 2024] DEBUG: Loading resource Urho2D/greenspiral.png" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -265,7 +513,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled pixel shader Bloom(COMBINE)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:31 2024] DEBUG: pressed ingredient: Fodase" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -277,7 +525,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Linked vertex shader Bloom() and pixel shader Bloom(COMBINE)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:31 2024] DEBUG: Loading resource Urho2D/imp_all.png" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -289,7 +537,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Loading resource Shaders/GLSL/CopyFramebuffer.glsl" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:32 2024] DEBUG: Resized scratch buffer to size 960" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -301,7 +549,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled vertex shader CopyFramebuffer()" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:33 2024] DEBUG: pressed ingredient: Urho" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -313,7 +561,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled pixel shader CopyFramebuffer()" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:33 2024] DEBUG: Loading resource Textures/FishBoneLogo.png" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -325,7 +573,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Linked vertex shader CopyFramebuffer() and pixel shader CopyFramebuffer()" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:33 2024] DEBUG: Loading temporary resource Textures/FishBoneLogo.xml" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -337,7 +585,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Loading resource Shaders/GLSL/Basic.glsl" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:33 2024] DEBUG: Resized scratch buffer to size 1248" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -349,7 +597,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled vertex shader Basic(DIFFMAP VERTEXCOLOR)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:34 2024] DEBUG: pressed ingredient: Stretchable" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -361,7 +609,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled pixel shader Basic(DIFFMAP VERTEXCOLOR)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:34 2024] DEBUG: Loading resource Urho2D/Stretchable.png" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -373,7 +621,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Linked vertex shader Basic(DIFFMAP VERTEXCOLOR) and pixel shader Basic(DIFFMAP VERTEXCOLOR)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:34 2024] DEBUG: Loading temporary resource Urho2D/Stretchable.xml" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -385,7 +633,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Compiled pixel shader Basic(ALPHAMAP VERTEXCOLOR)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:34 2024] DEBUG: Resized scratch buffer to size 1440" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -397,7 +645,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:49 2024] DEBUG: Linked vertex shader Basic(DIFFMAP VERTEXCOLOR) and pixel shader Basic(ALPHAMAP VERTEXCOLOR)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:34 2024] DEBUG: Resized scratch buffer to size 1536" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -409,7 +657,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:58 2024] DEBUG: Compiled vertex shader Basic(VERTEXCOLOR)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:37 2024] DEBUG: pressed ingredient: Urho" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -421,7 +669,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:58 2024] DEBUG: Compiled pixel shader Basic(VERTEXCOLOR)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:37 2024] DEBUG: pressed ingredient: Fodase" />
 					</element>
 					<element type="Text" style="ConsoleDebugText">
 						<attribute name="Pivot" value="0 0" />
@@ -433,7 +681,7 @@
 						<attribute name="Is Enabled" value="true" />
 						<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
 						<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-						<attribute name="Text" value="[Thu Jan 25 23:53:58 2024] DEBUG: Linked vertex shader Basic(VERTEXCOLOR) and pixel shader Basic(VERTEXCOLOR)" />
+						<attribute name="Text" value="[Sat Jan 27 19:15:38 2024] DEBUG: pressed ingredient: Flour" />
 					</element>
 				</element>
 			</element>
@@ -443,10 +691,7 @@
 			<attribute name="Layout Mode" value="Horizontal" />
 			<attribute name="Layout Spacing" value="1" />
 			<element type="DropDownList">
-				<attribute name="Max Size" value="84 2147483647" />
 				<attribute name="Pivot" value="0 0" />
-				<attribute name="Is Enabled" value="false" />
-				<attribute name="Focus Mode" value="NotFocusable" />
 				<attribute name="Layout Mode" value="Horizontal" />
 				<attribute name="Layout Border" value="4 1 4 1" />
 				<attribute name="Image Rect" value="16 0 32 16" />
@@ -454,6 +699,7 @@
 				<attribute name="Hover Image Offset" value="0 16" />
 				<attribute name="Pressed Image Offset" value="16 0" />
 				<attribute name="Pressed Child Offset" value="-1 1" />
+				<attribute name="Selection" value="-1" />
 				<element internal="true" style="none">
 					<attribute name="Pivot" value="0 0" />
 					<element type="Text" internal="true" style="none">
@@ -481,18 +727,6 @@
 							<attribute name="Hover Image Offset" value="16 16" />
 							<element internal="true" style="none">
 								<attribute name="Pivot" value="0 0" />
-								<element type="Text" style="ConsoleText">
-									<attribute name="Pivot" value="0 0" />
-									<attribute name="Top Left Color" value="0.85 0.85 0.85 1" />
-									<attribute name="Top Right Color" value="0.85 0.85 0.85 1" />
-									<attribute name="Bottom Left Color" value="0.85 0.85 0.85 1" />
-									<attribute name="Bottom Right Color" value="0.85 0.85 0.85 1" />
-									<attribute name="Is Enabled" value="true" />
-									<attribute name="Is Selected" value="true" />
-									<attribute name="Selection Color" value="0.23 0.3 0.27 1" />
-									<attribute name="Hover Color" value="0.3 0.4 0.32 1" />
-									<attribute name="Text" value="FileSystem" />
-								</element>
 							</element>
 						</element>
 					</element>

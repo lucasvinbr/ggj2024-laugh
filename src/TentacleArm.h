@@ -31,9 +31,11 @@ namespace Laugh {
 	private:
 		AnimatedSprite2D* armSprite_;
 		Node* attachmentPoint_;
+		StaticSprite2D* grabbedItemSprite_;
 		bool doBreathingAnim_;
 		bool isOnScreen_;
 		float breatheAnimTime_;
+		float breatheAnimIntensity_;
 
 		float appearAnimTime_;
 		Vector3 onScreenPos_, offScreenPos_;

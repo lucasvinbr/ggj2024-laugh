@@ -1,91 +1,151 @@
 {
     "ingredients": {
-        "flour": {
-            "name": "Flour",
-            "imagepath": "Urho2D/greenspiral.png"
+        "moon": {
+            "name": "moon",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/moon.png"
         },
         "fodase": {
             "name": "Fodase",
             "imagepath": "Urho2D/imp_all.png"
         },
-        "urho": {
-            "name": "Urho",
-            "imagepath": "Textures/FishBoneLogo.png"
+        "cat": {
+            "name": "cat",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/cat.png"
         },
-        "stretchable": {
-            "name": "Stretchable",
-            "imagepath": "Urho2D/Stretchable.png"
+        "pudding": {
+            "name": "pudding",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/pudding.png"
         }
     },
     "recipes": {
-        "aster": {
-            "name": "Aster",
-            "imagepath": "Urho2D/Aster.png",
-            "ingredients": [
-                "flour",
-                "flour",
-                "flour",
-                "urho"
-            ]
-        },
         "fedese": {
-            "name": "Fedese",
-            "imagepath": "Urho2D/ggj2024-laugh/imp_body.png",
+            "name": "Cat",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/cat.png",
             "ingredients": [
                 "fodase",
-                "fodase",
-                "fodase",
-                "fodase"
+                "cat",
+                "cat",
+                "cat"
             ]
         },
-        "blood": {
-            "name": "Blood",
-            "imagepath": "Urho2D/ggj2024-laugh/imp_blood.png",
+        "catparty": {
+            "name": "Backstreet cats",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/catparty.png",
             "ingredients": [
-                "flour",
-                "urho",
-                "stretchable",
-                "fodase"
+                "cat",
+                "cat",
+                "cat",
+                "cat"
             ]
         },
-        "gold": {
-            "name": "Gold",
-            "imagepath": "Urho2D/GoldIcon.png",
+        "1catpudding": {
+            "name": "Cat pudding",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/1catpudding.png",
             "ingredients": [
-                "flour",
-                "urho",
-                "urho",
-                "fodase"
+                "cat",
+                "pudding",
+                "pudding",
+                "pudding"
             ]
         },
-        "ball": {
-            "name": "Ball",
-            "imagepath": "Urho2D/Ball.png",
+        "2catspudding": {
+            "name": "Two cats, one nap",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/2catspudding.png",
             "ingredients": [
-                "flour",
-                "stretchable",
-                "stretchable",
-                "fodase"
+                "cat",
+                "cat",
+                "pudding",
+                "moon"
             ]
         },
-        "box": {
-            "name": "Box",
-            "imagepath": "Urho2D/Box.png",
+        "3catsmoon": {
+            "name": "Moon party",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/3catsmoon.png",
             "ingredients": [
-                "flour",
-                "flour",
-                "urho",
-                "fodase"
+                "cat",
+                "cat",
+                "cat",
+                "moon"
             ]
         },
-        "sunpng": {
-            "name": "sun.png",
-            "imagepath": "Urho2D/sun.png",
+        "3catspudding": {
+            "name": "Lo-res meal",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/3catspudding.png",
             "ingredients": [
-                "flour",
-                "flour",
-                "fodase",
-                "fodase"
+                "cat",
+                "cat",
+                "cat",
+                "pudding"
+            ]
+        },
+        "cat2puddmoon": {
+            "name": "The good life",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/cat2puddmoon.png",
+            "ingredients": [
+                "cat",
+                "pudding",
+                "moon",
+                "pudding"
+            ]
+        },
+        "catintide": {
+            "name": "High tide diver cat",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/catintide.png",
+            "ingredients": [
+                "cat",
+                "moon",
+                "moon",
+                "moon"
+            ]
+        },
+        "mooncat": {
+            "name": "Mooncat",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/mooncat.png",
+            "ingredients": [
+                "cat",
+                "cat",
+                "moon",
+                "moon"
+            ]
+        },
+        "onemonth": {
+            "name": "One month",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/onemonth.png",
+            "ingredients": [
+                "moon",
+                "moon",
+                "moon",
+                "moon"
+            ]
+        },
+        "puddingcat": {
+            "name": "Puddingcat",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/puddingcat.png",
+            "ingredients": [
+                "pudding",
+                "pudding",
+                "cat",
+                "cat"
+            ]
+        },
+        "puddinghairedmooncat": {
+            "name": "Hairy mooncat",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/puddinghairedmooncat.png",
+            "ingredients": [
+                "pudding",
+                "moon",
+                "moon",
+                "cat"
+            ]
+        },
+        "superpudding": {
+            "name": "Yes",
+            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/superpudding.png",
+            "ingredients": [
+                "pudding",
+                "pudding",
+                "pudding",
+                "pudding"
             ]
         }
     }

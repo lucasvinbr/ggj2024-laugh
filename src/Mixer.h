@@ -36,10 +36,12 @@ namespace Laugh {
 
 		void ToggleDisplay(bool show);
 
+		void PlaceLid();
 		void RemoveLid();
 		void StartMixing();
 
 		void PlaceIngredient(Sprite2D* ingSprite);
+		void Cleanup();
 
 		void Start();
 		void Update(float timeStep);

@@ -67,5 +67,6 @@ namespace Laugh {
 		/// </summary>
 		const int KILL_Y = -1000;
 
+		Vector<String> pickedIngredients_;
 };
 }

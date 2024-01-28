@@ -21,6 +21,10 @@ namespace Laugh {
 
 	Laugh::UIMixer::UIMixer(Context* c) : UIGameScreen(c)
 	{
+		ingredientsPickerBar_ = nullptr;
+		scenarioStuffParent_ = nullptr;
+		startMixingBtn_ = nullptr;
+
 		auto cache = c->GetSubsystem<ResourceCache>();
 		auto ui = c->GetSubsystem<UI>();
 		auto uiFile = cache->GetResource<XMLFile>("UI/ggj2024-laugh/screen_game.xml");
@@ -41,20 +45,20 @@ namespace Laugh {
 		auto ui = context_->GetSubsystem<UI>();
 		auto cache = context_->GetSubsystem<ResourceCache>();
 
-		// create scenario stuff parent... and the scenario stuff
-		scenarioStuffParent_ = World::instance_->dynamicContentParent_->CreateChild("uiMixer_scenario");
-
-		
+		startMixingBtn_ = instanceRoot_->GetChild("blendButton", true);
+		startMixingBtn_->SetStyleAuto();
+		SubscribeToEvent(startMixingBtn_, E_RELEASED, URHO3D_HANDLER(UIMixer, HandleStartMixButton));
+		startMixingBtn_->SetVisible(false);
 
 		// find ingredient buttons container
 		// create buttons for each ingredient, and add the event to each of them
-		auto ingsContainer = instanceRoot_->GetChild("SV_ItemContainer_ings", true);
+		ingredientsPickerBar_ = instanceRoot_->GetChild("SV_ItemContainer_ings", true);
 		auto ingButtonXml = cache->GetResource<XMLFile>("UI/ggj2024-laugh/elements/ingEntry_base.xml")->GetRoot();
 
 		auto ingredients = World::instance_->recipesData_->ingredients_;
 		for (auto ingEntry = ingredients.Begin(); ingEntry != ingredients.End();) {
 			auto ingData = ingEntry->second_;
-			auto createdBtn = ingsContainer->LoadChildXML(ingButtonXml, nullptr);
+			auto createdBtn = ingredientsPickerBar_->LoadChildXML(ingButtonXml, nullptr);
 			createdBtn->SetStyleAuto();
 
 			auto btnSprite = static_cast<Sprite*>(createdBtn->GetChild("ingSprite", true));
@@ -74,39 +78,96 @@ namespace Laugh {
 	{
 		isShown_ = true;
 		instanceRoot_->SetVisible(true);
-		scenarioStuffParent_->SetEnabledRecursive(true);
+
+		World::instance_->mixer_->Cleanup();
+
+		startMixingBtn_->SetVisible(false);
+		ingredientsPickerBar_->SetVisible(true);
 	}
 
 	void UIMixer::Hide()
 	{
 		isShown_ = false;
 		instanceRoot_->SetVisible(false);
-		scenarioStuffParent_->SetEnabledRecursive(false);
 	}
 
 	void UIMixer::MixIngredients()
 	{
-		// find the recipe with most matching ingredients. that's the one we will show as result
+
+		World::instance_->mixer_->StartMixing();
+
+		World::instance_->topLeftArm_->GrabSprite(nullptr);
+		World::instance_->topRightArm_->GrabSprite(nullptr);
+		World::instance_->botLeftArm_->GrabSprite(nullptr);
+		World::instance_->botRightArm_->GrabSprite(nullptr);
+
+		World::instance_->topLeftArm_->SetOnScreen(false);
+		World::instance_->topRightArm_->SetOnScreen(false);
+		World::instance_->botLeftArm_->SetOnScreen(false);
+		World::instance_->botRightArm_->SetOnScreen(false);
+
 	}
 
 	void UIMixer::HandleStartMixButton(StringHash, VariantMap& eventData)
 	{
 		// if not yet mixing and got enough ingredients, start mixing
+		MixIngredients();
+		startMixingBtn_->SetVisible(false);
 	}
 
 	void UIMixer::HandlePickIngredientButton(StringHash, VariantMap& eventData)
 	{
 		// if not enough ingredients picked yet, add ingredient, do anim.
 		// if enough ingredients picked now, hide ingredients list, show mix button
-
+		auto cache = GetSubsystem<ResourceCache>();
 		using namespace Released;
 
 		auto pressedBtn = static_cast<UIElement*>(eventData[P_ELEMENT].GetPtr());
 		String ingredientId = pressedBtn->GetChild(0)->GetName();
 
-		auto ingredients = World::instance_->recipesData_->ingredients_;
+		auto& ingredients = World::instance_->recipesData_->ingredients_;
+		auto& pickedIngredient = ingredients[ingredientId];
+		auto& pickedIngs = World::instance_->pickedIngredients_;
 
-		URHO3D_LOGDEBUG("pressed ingredient: " + ingredients[ingredientId].name_);
+		URHO3D_LOGDEBUG("pressed ingredient: " + pickedIngredient.name_);
+
+		
+
+		if (pickedIngs.Size() < 4) {
+			
+			pickedIngs.Push(ingredientId);
+
+			TentacleArm* holderArm;
+
+			switch (pickedIngs.Size())
+			{
+			case 1:
+				holderArm = World::instance_->topLeftArm_;
+				break;
+			case 2:
+				holderArm = World::instance_->botLeftArm_;
+				break;
+			case 3:
+				holderArm = World::instance_->topRightArm_;
+				break;
+			case 4:
+				holderArm = World::instance_->botRightArm_;
+				break;
+			default:
+				URHO3D_LOGDEBUG("too many ingredients picked?!");
+				holderArm = nullptr;
+				break;
+			}
+
+			holderArm->GrabSprite(cache->GetResource<Sprite2D>(pickedIngredient.imageFilePath_));
+			holderArm->SetOnScreen(true);
+
+			if (pickedIngs.Size() >= 4) {
+				// hide ingredients ui, show blend button
+				ingredientsPickerBar_->SetVisible(false);
+				startMixingBtn_->SetVisible(true);
+			}
+		}
 	}
 
 }

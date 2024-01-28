@@ -13,7 +13,7 @@
 		<attribute name="Size" value="150 150" />
 		<attribute name="Hotspot" value="75 75" />
 		<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/imp_body.png" />
-		<attribute name="Image Rect" value="0 0 124 131" />
+		<attribute name="Image Rect" value="0 0 512 512" />
 		<attribute name="Horiz Alignment" value="Center" />
 		<attribute name="Vert Alignment" value="Center" />
 	</element>

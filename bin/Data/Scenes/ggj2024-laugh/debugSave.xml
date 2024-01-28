@@ -4,9 +4,9 @@
 	<attribute name="Time Scale" value="1" />
 	<attribute name="Smoothing Constant" value="50" />
 	<attribute name="Snap Threshold" value="5" />
-	<attribute name="Elapsed Time" value="10.7895" />
-	<attribute name="Next Replicated Node ID" value="15" />
-	<attribute name="Next Replicated Component ID" value="17" />
+	<attribute name="Elapsed Time" value="26.5232" />
+	<attribute name="Next Replicated Node ID" value="32" />
+	<attribute name="Next Replicated Component ID" value="30" />
 	<attribute name="Next Local Node ID" value="16777216" />
 	<attribute name="Next Local Component ID" value="16777216" />
 	<attribute name="Variables" />
@@ -17,7 +17,7 @@
 	</component>
 	<component type="DebugRenderer" id="3" />
 	<component type="Renderer2D" id="7" />
-	<component type="SoundSource" id="16">
+	<component type="SoundSource" id="29">
 		<attribute name="Type" value="Music" />
 	</component>
 	<node id="2">
@@ -80,7 +80,7 @@
 			<attribute name="Tags" />
 			<attribute name="Position" value="-5.12 2.336 0" />
 			<attribute name="Rotation" value="1 0 0 0" />
-			<attribute name="Scale" value="1.00418 1 1" />
+			<attribute name="Scale" value="1.02764 1.06856 1" />
 			<attribute name="Variables" />
 			<component type="TentacleArm" id="8" />
 			<node id="11">
@@ -98,6 +98,34 @@
 					<attribute name="Animation Set" value="AnimationSet2D;Urho2D/ggj2024-laugh/tentacle/tentacle.scml" />
 					<attribute name="Animation" value="idle" />
 				</component>
+				<node id="12">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="attachmentPt" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="3.584 -1.792 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticSprite2D" id="13">
+						<attribute name="Sprite" value="Sprite2D;Urho2D/ggj2024-laugh/bolha_0.png" />
+						<attribute name="Draw Rectangle" value="-1.28 -1.28 1.28 1.28" />
+						<attribute name="Texture Rectangle" value="1.95312e-07 1 1 1.95312e-07" />
+					</component>
+					<node id="13">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="grabbedItem" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="0 0 0" />
+						<attribute name="Rotation" value="1 0 0 0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+						<component type="StaticSprite2D" id="14">
+							<attribute name="Sprite" value="Sprite2D;Urho2D/greenspiral.png" />
+							<attribute name="Draw Rectangle" value="-0.16 -0.16 0.16 0.16" />
+							<attribute name="Texture Rectangle" value="1.5625e-06 0.999998 0.999998 1.5625e-06" />
+						</component>
+					</node>
+				</node>
 			</node>
 		</node>
 		<node id="8">
@@ -106,63 +134,9 @@
 			<attribute name="Tags" />
 			<attribute name="Position" value="5.12 2.336 0" />
 			<attribute name="Rotation" value="1 0 0 0" />
-			<attribute name="Scale" value="1.00418 1 1" />
+			<attribute name="Scale" value="1.02764 1.06856 1" />
 			<attribute name="Variables" />
 			<component type="TentacleArm" id="9" />
-			<node id="12">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="scaler" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="0 0 0" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="0.5 0.5 0.5" />
-				<attribute name="Variables" />
-				<component type="AnimatedSprite2D" id="13">
-					<attribute name="Layer" value="4" />
-					<attribute name="Flip X" value="true" />
-					<attribute name="Draw Rectangle" value="-0 -2.56 5.12 0" />
-					<attribute name="Entity" value="entity_000" />
-					<attribute name="Animation Set" value="AnimationSet2D;Urho2D/ggj2024-laugh/tentacle/tentacle.scml" />
-					<attribute name="Animation" value="idle" />
-				</component>
-			</node>
-		</node>
-		<node id="9">
-			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="tentacle_botLeft" />
-			<attribute name="Tags" />
-			<attribute name="Position" value="-5.12 -2.336 0" />
-			<attribute name="Rotation" value="1 0 0 0" />
-			<attribute name="Scale" value="1.00418 1 1" />
-			<attribute name="Variables" />
-			<component type="TentacleArm" id="10" />
-			<node id="13">
-				<attribute name="Is Enabled" value="true" />
-				<attribute name="Name" value="scaler" />
-				<attribute name="Tags" />
-				<attribute name="Position" value="0 0 0" />
-				<attribute name="Rotation" value="1 0 0 0" />
-				<attribute name="Scale" value="0.5 0.5 0.5" />
-				<attribute name="Variables" />
-				<component type="AnimatedSprite2D" id="14">
-					<attribute name="Layer" value="4" />
-					<attribute name="Flip Y" value="true" />
-					<attribute name="Draw Rectangle" value="-0 -2.56 5.12 0" />
-					<attribute name="Entity" value="entity_000" />
-					<attribute name="Animation Set" value="AnimationSet2D;Urho2D/ggj2024-laugh/tentacle/tentacle.scml" />
-					<attribute name="Animation" value="idle" />
-				</component>
-			</node>
-		</node>
-		<node id="10">
-			<attribute name="Is Enabled" value="true" />
-			<attribute name="Name" value="tentacle_botRight" />
-			<attribute name="Tags" />
-			<attribute name="Position" value="5.12 -2.336 0" />
-			<attribute name="Rotation" value="1 0 0 0" />
-			<attribute name="Scale" value="1.00418 1 1" />
-			<attribute name="Variables" />
-			<component type="TentacleArm" id="11" />
 			<node id="14">
 				<attribute name="Is Enabled" value="true" />
 				<attribute name="Name" value="scaler" />
@@ -174,13 +148,262 @@
 				<component type="AnimatedSprite2D" id="15">
 					<attribute name="Layer" value="4" />
 					<attribute name="Flip X" value="true" />
+					<attribute name="Draw Rectangle" value="-0 -2.56 5.12 0" />
+					<attribute name="Entity" value="entity_000" />
+					<attribute name="Animation Set" value="AnimationSet2D;Urho2D/ggj2024-laugh/tentacle/tentacle.scml" />
+					<attribute name="Animation" value="idle" />
+				</component>
+				<node id="15">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="attachmentPt" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="-3.584 -1.792 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticSprite2D" id="16">
+						<attribute name="Sprite" value="Sprite2D;Urho2D/ggj2024-laugh/bolha_0.png" />
+						<attribute name="Draw Rectangle" value="-1.28 -1.28 1.28 1.28" />
+						<attribute name="Texture Rectangle" value="1.95312e-07 1 1 1.95312e-07" />
+					</component>
+					<node id="16">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="grabbedItem" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="0 0 0" />
+						<attribute name="Rotation" value="1 0 0 0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+						<component type="StaticSprite2D" id="17">
+							<attribute name="Sprite" value="Sprite2D;Textures/FishBoneLogo.png" />
+							<attribute name="Draw Rectangle" value="-1.28 -0.64 1.28 0.64" />
+							<attribute name="Texture Rectangle" value="1.95312e-07 1 1 3.90625e-07" />
+						</component>
+					</node>
+				</node>
+			</node>
+		</node>
+		<node id="9">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="tentacle_botLeft" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="-5.12 -2.336 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1.02764 1.06856 1" />
+			<attribute name="Variables" />
+			<component type="TentacleArm" id="10" />
+			<node id="17">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="scaler" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 0.5" />
+				<attribute name="Variables" />
+				<component type="AnimatedSprite2D" id="18">
+					<attribute name="Layer" value="4" />
 					<attribute name="Flip Y" value="true" />
 					<attribute name="Draw Rectangle" value="-0 -2.56 5.12 0" />
 					<attribute name="Entity" value="entity_000" />
 					<attribute name="Animation Set" value="AnimationSet2D;Urho2D/ggj2024-laugh/tentacle/tentacle.scml" />
 					<attribute name="Animation" value="idle" />
 				</component>
+				<node id="18">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="attachmentPt" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="3.584 1.792 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticSprite2D" id="19">
+						<attribute name="Sprite" value="Sprite2D;Urho2D/ggj2024-laugh/bolha_0.png" />
+						<attribute name="Draw Rectangle" value="-1.28 -1.28 1.28 1.28" />
+						<attribute name="Texture Rectangle" value="1.95312e-07 1 1 1.95312e-07" />
+					</component>
+					<node id="19">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="grabbedItem" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="0 0 0" />
+						<attribute name="Rotation" value="1 0 0 0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+						<component type="StaticSprite2D" id="20">
+							<attribute name="Sprite" value="Sprite2D;Urho2D/imp_all.png" />
+							<attribute name="Draw Rectangle" value="-1.19 -1.355 1.19 1.355" />
+							<attribute name="Texture Rectangle" value="2.10084e-07 1 1 1.84502e-07" />
+						</component>
+					</node>
+				</node>
 			</node>
+		</node>
+		<node id="10">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="tentacle_botRight" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="5.12 -2.336 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1.02764 1.06856 1" />
+			<attribute name="Variables" />
+			<component type="TentacleArm" id="11" />
+			<node id="20">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="scaler" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 0.5" />
+				<attribute name="Variables" />
+				<component type="AnimatedSprite2D" id="21">
+					<attribute name="Layer" value="4" />
+					<attribute name="Flip X" value="true" />
+					<attribute name="Flip Y" value="true" />
+					<attribute name="Draw Rectangle" value="-0 -2.56 5.12 0" />
+					<attribute name="Entity" value="entity_000" />
+					<attribute name="Animation Set" value="AnimationSet2D;Urho2D/ggj2024-laugh/tentacle/tentacle.scml" />
+					<attribute name="Animation" value="idle" />
+				</component>
+				<node id="21">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="attachmentPt" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="-3.584 1.792 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticSprite2D" id="22">
+						<attribute name="Sprite" value="Sprite2D;Urho2D/ggj2024-laugh/bolha_0.png" />
+						<attribute name="Draw Rectangle" value="-1.28 -1.28 1.28 1.28" />
+						<attribute name="Texture Rectangle" value="1.95312e-07 1 1 1.95312e-07" />
+					</component>
+					<node id="22">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="grabbedItem" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="0 0 0" />
+						<attribute name="Rotation" value="1 0 0 0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+						<component type="StaticSprite2D" id="23">
+							<attribute name="Sprite" value="Sprite2D;Urho2D/Stretchable.png" />
+							<attribute name="Draw Rectangle" value="-1 -1 1 1" />
+							<attribute name="Texture Rectangle" value="2.5e-07 1 1 2.5e-07" />
+						</component>
+					</node>
+				</node>
+			</node>
+		</node>
+		<node id="23">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="mixer" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
+			<component type="Mixer" id="28" />
+			<node id="24">
+				<attribute name="Is Enabled" value="true" />
+				<attribute name="Name" value="mixerVisuals" />
+				<attribute name="Tags" />
+				<attribute name="Position" value="0 0 0" />
+				<attribute name="Rotation" value="1 0 0 0" />
+				<attribute name="Scale" value="0.5 0.5 0.5" />
+				<attribute name="Variables" />
+				<node id="25">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="base" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="0 -1.075 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticSprite2D" id="24">
+						<attribute name="Layer" value="4" />
+						<attribute name="Order in Layer" value="3" />
+						<attribute name="Sprite" value="SpriteSheet2D;Urho2D/ggj2024-laugh/mixer/mixer.xml@mix_base" />
+						<attribute name="Draw Rectangle" value="-2.2 -1.075 2.2 1.075" />
+						<attribute name="Texture Rectangle" value="0.540039 0.414062 0.969727 0.204102" />
+					</component>
+				</node>
+				<node id="26">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="base" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="0 -1.075 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticSprite2D" id="25">
+						<attribute name="Layer" value="4" />
+						<attribute name="Order in Layer" value="4" />
+						<attribute name="Sprite" value="SpriteSheet2D;Urho2D/ggj2024-laugh/mixer/mixer.xml@mix_btn" />
+						<attribute name="Draw Rectangle" value="-0.565 -0.46 0.565 0.46" />
+						<attribute name="Texture Rectangle" value="0.541016 0.533203 0.651367 0.443359" />
+					</component>
+				</node>
+				<node id="27">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="base" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="0 1.837 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticSprite2D" id="26">
+						<attribute name="Layer" value="4" />
+						<attribute name="Order in Layer" value="2" />
+						<attribute name="Sprite" value="SpriteSheet2D;Urho2D/ggj2024-laugh/mixer/mixer.xml@mix_glass" />
+						<attribute name="Draw Rectangle" value="-2.36 -2.24 2.36 2.24" />
+						<attribute name="Texture Rectangle" value="0.539063 1 1 0.5625" />
+					</component>
+					<node id="28">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="ingredientsParent" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="0 0 0" />
+						<attribute name="Rotation" value="1 0 0 0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+					</node>
+				</node>
+				<node id="29">
+					<attribute name="Is Enabled" value="true" />
+					<attribute name="Name" value="base" />
+					<attribute name="Tags" />
+					<attribute name="Position" value="-0.2 13.8617 0" />
+					<attribute name="Rotation" value="1 0 0 0" />
+					<attribute name="Scale" value="1 1 1" />
+					<attribute name="Variables" />
+					<component type="StaticSprite2D" id="27">
+						<attribute name="Layer" value="4" />
+						<attribute name="Order in Layer" value="1" />
+						<attribute name="Sprite" value="SpriteSheet2D;Urho2D/ggj2024-laugh/mixer/mixer.xml@mix_lid" />
+						<attribute name="Color" value="1 1 1 -0.000869989" />
+						<attribute name="Draw Rectangle" value="-1.86 -0.505 1.86 0.505" />
+						<attribute name="Texture Rectangle" value="0.541992 0.139648 0.905273 0.0410157" />
+					</component>
+					<node id="30">
+						<attribute name="Is Enabled" value="true" />
+						<attribute name="Name" value="ingredientsParent" />
+						<attribute name="Tags" />
+						<attribute name="Position" value="0 0 0" />
+						<attribute name="Rotation" value="1 0 0 0" />
+						<attribute name="Scale" value="1 1 1" />
+						<attribute name="Variables" />
+					</node>
+				</node>
+			</node>
+		</node>
+		<node id="31">
+			<attribute name="Is Enabled" value="true" />
+			<attribute name="Name" value="uiMixer_scenario" />
+			<attribute name="Tags" />
+			<attribute name="Position" value="0 0 0" />
+			<attribute name="Rotation" value="1 0 0 0" />
+			<attribute name="Scale" value="1 1 1" />
+			<attribute name="Variables" />
 		</node>
 	</node>
 	<node id="3">
