@@ -4,10 +4,6 @@
             "name": "moon",
             "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/moon.png"
         },
-        "fodase": {
-            "name": "Fodase",
-            "imagepath": "Urho2D/imp_all.png"
-        },
         "cat": {
             "name": "cat",
             "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/cat.png"
@@ -18,16 +14,6 @@
         }
     },
     "recipes": {
-        "fedese": {
-            "name": "Cat",
-            "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/cat.png",
-            "ingredients": [
-                "fodase",
-                "cat",
-                "cat",
-                "cat"
-            ]
-        },
         "catparty": {
             "name": "Backstreet cats",
             "imagepath": "Urho2D/ggj2024-laugh/ings_recipes/catparty.png",

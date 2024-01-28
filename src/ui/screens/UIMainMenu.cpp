@@ -3,6 +3,7 @@
 #include <Urho3D/IO/FileSystem.h>
 #include "UIMainMenu.h"
 #include "../GameUI.h"
+#include "../../GameAudio.h"
 #include <Urho3D/UI/UI.h>
 #include <Urho3D/UI/UIEvents.h>
 #include <Urho3D/Core/Object.h>
@@ -47,6 +48,8 @@ namespace Laugh {
 	{
 		isShown_ = true;
 		instanceRoot_->SetVisible(true);
+
+		GameAudio::instance_->PlayTitleSound();
 	}
 
 	void UIMainMenu::Hide()
@@ -64,6 +67,8 @@ namespace Laugh {
 		World::instance_->topRightArm_->SetOnScreen(false);
 		World::instance_->botLeftArm_->SetOnScreen(false);
 		World::instance_->botRightArm_->SetOnScreen(false);
+
+		GameAudio::instance_->PlayClickSound();
 
 		World::instance_->mixer_->RemoveLid();
 	}

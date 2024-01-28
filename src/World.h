@@ -24,6 +24,7 @@
 #include "dataObjs/RecipeData.h"
 #include "TentacleArm.h"
 #include "Mixer.h"
+#include "dataObjs/UserSavedData.h"
 
 using namespace Urho3D;
 
@@ -40,6 +41,8 @@ namespace Laugh {
 		void CreateDynamicContent();
 
 		void Cleanup();
+
+		void SaveUserData();
 
 		void HandlePostRenderUpdate(StringHash, VariantMap& eventData);
 
@@ -68,5 +71,10 @@ namespace Laugh {
 		const int KILL_Y = -1000;
 
 		Vector<String> pickedIngredients_;
+		SharedPtr<UserSavedData> userData_;
+
+	private:
+		String prefsFilePath_;
+		String prefsFileDir_;
 };
 }

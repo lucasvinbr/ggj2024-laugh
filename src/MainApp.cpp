@@ -1,4 +1,3 @@
-#pragma once
 #include <string>
 #include <sstream>
 #include "MainApp.h"
@@ -19,6 +18,7 @@ MainApp::MainApp(Context* context) : Application(context)
 	Mixer::RegisterObject(context);
 	RecipesData::RegisterObject(context);
 	TentacleArm::RegisterObject(context);
+	UserSavedData::RegisterObject(context);
 }
 /**
 * This method is called before the engine has been initialized.

@@ -10,6 +10,7 @@
 #include <Urho3D/Scene/ValueAnimation.h>
 #include <Urho3D/Scene/SceneEvents.h>
 #include "ui/screens/UIGotItem.h"
+#include "GameAudio.h"
 
 using namespace Urho3D;
 
@@ -107,11 +108,11 @@ namespace Laugh {
         auto ingIconSprite = innerIngNode->CreateComponent<StaticSprite2D>();
         ingIconSprite->SetSprite(ingSprite);
         ingIconSprite->SetLayer(SPRITELAYER_INSIDE_MIXER);
-        innerIngNode->SetScale(0.4f);
+        innerIngNode->SetScale(0.3f);
 
         ingredientSprites_.Push(ingBubbleSprite);
 
-        newIngNode->SetPosition(Vector3(Random() - 0.5f, Random() - 0.5f));
+        newIngNode->SetPosition(Vector3(Random(-0.35f, 0.05f), Random(-0.3f, 0.8f)));
     }
 
     void Mixer::Cleanup()
@@ -275,6 +276,8 @@ namespace Laugh {
             // done putting lid, let's start mixing
             mixerState_ = SHAKING;
             timeAnimating_ = 0.0f;
+
+            GameAudio::instance_->StartMusic();
 
             // subscribe to anim event, so that we know when we're done mixing
             SubscribeToEvent(E_MIXER_ANIM_DONE, URHO3D_HANDLER(Mixer, OnDoneAnimating));

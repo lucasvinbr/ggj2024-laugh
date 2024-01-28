@@ -14,6 +14,7 @@
 #include <Urho3D/Urho2D/Sprite2D.h>
 #include <Urho3D/Urho2D/StaticSprite2D.h>
 #include <Urho3D/Graphics/Texture2D.h>
+#include "../../GameAudio.h"
 
 using namespace Urho3D;
 
@@ -93,7 +94,6 @@ namespace Laugh {
 
 	void UIMixer::MixIngredients()
 	{
-
 		World::instance_->mixer_->StartMixing();
 
 		World::instance_->topLeftArm_->GrabSprite(nullptr);
@@ -113,6 +113,8 @@ namespace Laugh {
 		// if not yet mixing and got enough ingredients, start mixing
 		MixIngredients();
 		startMixingBtn_->SetVisible(false);
+
+		GameAudio::instance_->PlayClickSound();
 	}
 
 	void UIMixer::HandlePickIngredientButton(StringHash, VariantMap& eventData)
@@ -130,7 +132,7 @@ namespace Laugh {
 		auto& pickedIngs = World::instance_->pickedIngredients_;
 
 		URHO3D_LOGDEBUG("pressed ingredient: " + pickedIngredient.name_);
-
+		GameAudio::instance_->PlayPickItemSound();
 		
 
 		if (pickedIngs.Size() < 4) {

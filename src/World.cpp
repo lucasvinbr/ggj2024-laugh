@@ -20,6 +20,25 @@ namespace Laugh {
         effects_(c),
         curGameState_(GAMESTATE_ENDED)
     {
+        auto fileSystem = GetSubsystem<FileSystem>();
+        prefsFileDir_ = fileSystem->GetAppPreferencesDir("ggj2024-laugh", "blendastic");
+
+        URHO3D_LOGDEBUG(prefsFileDir_);
+
+        prefsFilePath_ = prefsFileDir_ + "userprefs.json";
+
+        auto cache = GetSubsystem<ResourceCache>();
+
+        auto prefsFile = cache->GetResource<UserSavedData>(prefsFilePath_);
+
+        if (prefsFile) {
+            userData_ = prefsFile;
+        }
+        else {
+            userData_ = SharedPtr<UserSavedData>(new UserSavedData(context_));
+            userData_->LoadFile(prefsFilePath_);
+        }
+
         mixer_ = nullptr;
         instance_ = this;
     }
@@ -146,6 +165,11 @@ namespace Laugh {
 
     void World::Cleanup()
     {
+    }
+
+    void World::SaveUserData()
+    {
+        userData_->SaveFile(prefsFilePath_);
     }
 
     void World::HandlePostRenderUpdate(StringHash, VariantMap& eventData)

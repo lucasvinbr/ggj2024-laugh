@@ -1,7 +1,7 @@
 #include <Urho3D/Resource/ResourceCache.h>
 #include <Urho3D/Resource/XMLFile.h>
 #include <Urho3D/IO/FileSystem.h>
-#include "UIGotItem.h"
+#include "UISettings.h"
 #include "../GameUI.h"
 #include <Urho3D/UI/UI.h>
 #include <Urho3D/UI/UIEvents.h>
@@ -23,7 +23,7 @@ using namespace Urho3D;
 
 namespace Laugh {
 
-	Laugh::UIGotItem::UIGotItem(Context* c) : UIGameScreen(c)
+	Laugh::UISettings::UISettings(Context* c) : UIGameScreen(c)
 	{
 		glowSprite_ = nullptr;
 		obtainedItemNameText_ = nullptr;
@@ -40,19 +40,19 @@ namespace Laugh {
 		isShown_ = false;
 	}
 
-	UIGotItem::~UIGotItem()
+	UISettings::~UISettings()
 	{
 		instanceRoot_->Remove();
 	}
 
-	void UIGotItem::Setup()
+	void UISettings::Setup()
 	{
 		auto ui = context_->GetSubsystem<UI>();
 		auto cache = context_->GetSubsystem<ResourceCache>();
 
 		closeBtn_ = instanceRoot_->GetChild("doneBtn", true);
 		closeBtn_->SetStyleAuto();
-		SubscribeToEvent(closeBtn_, E_RELEASED, URHO3D_HANDLER(UIGotItem, HandleDoneButton));
+		SubscribeToEvent(closeBtn_, E_RELEASED, URHO3D_HANDLER(UISettings, HandleDoneButton));
 
 		glowSprite_ = static_cast<Sprite*>(instanceRoot_->GetChild("shine", true));
 
@@ -69,7 +69,7 @@ namespace Laugh {
 		obtainedItemNameText_->SetColor(Color::TRANSPARENT_BLACK);
 	}
 
-	void UIGotItem::Show(String dataPassed)
+	void UISettings::Show(String dataPassed)
 	{
 		isShown_ = true;
 		instanceRoot_->SetVisible(true);
@@ -127,13 +127,13 @@ namespace Laugh {
 		World::instance_->botRightArm_->SetOnScreen(true);
 	}
 
-	void UIGotItem::Hide()
+	void UISettings::Hide()
 	{
 		isShown_ = false;
 		instanceRoot_->SetVisible(false);
 	}
 
-	void UIGotItem::HandleDoneButton(StringHash, VariantMap& eventData)
+	void UISettings::HandleDoneButton(StringHash, VariantMap& eventData)
 	{
 		GameAudio::instance_->PlayClickSound();
 
