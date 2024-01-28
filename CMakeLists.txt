@@ -8,7 +8,7 @@ set (CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake/Modules)
 # Include UrhoCommon.cmake module after setting project name
 include (UrhoCommon)
 # Define target name
-set (TARGET_NAME Laugh)
+set (TARGET_NAME Blendastic)
 
 # Define source files
 #define_source_files ()

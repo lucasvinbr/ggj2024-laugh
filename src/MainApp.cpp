@@ -32,7 +32,7 @@ void MainApp::Setup()
 	// See http://urho3d.github.io/documentation/1.7/_main_loop.html
 	// for a more complete list.
 	engineParameters_[EP_FULL_SCREEN] = false;
-	engineParameters_[EP_LOG_NAME] = "laugh.log";
+	engineParameters_[EP_LOG_NAME] = "blendastic.log";
 	engineParameters_[EP_SOUND] = true;
 	// Configuration not depending whether we compile for debug or release.
 	engineParameters_[EP_WINDOW_WIDTH] = 1280;
@@ -53,9 +53,9 @@ void MainApp::Start()
 	ResourceCache* cache = GetSubsystem<ResourceCache>();
 	Graphics* graphics = GetSubsystem<Graphics>();
 
-	auto icon = cache->GetResource<Image>("Urho2D/duality/gameIcon.png");
+	auto icon = cache->GetResource<Image>("Urho2D/ggj2024-laugh/ings_recipes/cat.png");
 	graphics->SetWindowIcon(icon);
-	graphics->SetWindowTitle("Laugh");
+	graphics->SetWindowTitle("Blendastic");
 
 	debugUtils_ = new DebugUtils(engine_, context_);
 
