@@ -41,7 +41,8 @@ namespace Laugh {
     bool UserSavedData::Save(Serializer& dest) const
     {
         SharedPtr<JSONFile> json(new JSONFile(context_));
-        JSONValue jsonRoot = json->GetRoot();
+        json->FromString("{}");
+        JSONValue& jsonRoot = json->GetRoot();
 
         Save(jsonRoot);
         return json->Save(dest);
@@ -55,7 +56,7 @@ namespace Laugh {
             return false;
         }
 
-        dest.Set("audiovolume", audioVolume_);
+        dest.Set("audiovolume", JSONValue(audioVolume_));
         dest.Set("knownrecipes", JsonUtils::SetupJsonArrayFromStringVector(knownRecipes_));
 
         return true;
@@ -73,7 +74,7 @@ namespace Laugh {
             return false;
         }
 
-        audioVolume_ = JsonUtils::GetFloatFromSourceJson(source, "audiovolume");
+        audioVolume_ = JsonUtils::GetFloatFromSourceJson(source, "audiovolume", audioVolume_);
         JsonUtils::FillStringVectorFromJsonArray(knownRecipes_, source, "knownrecipes");
 
         return true;

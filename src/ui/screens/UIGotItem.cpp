@@ -84,6 +84,7 @@ namespace Laugh {
 		auto& pickedIngs = World::instance_->pickedIngredients_;
 		Recipe* bestRecipe;
 		int recipeScore = 0, topScore = 0;
+		const String* bestRecipeId;
 		for (auto recpEntry = recipes.Begin(); recpEntry != recipes.End();) {
 			recipeScore = 0;
 			Vector<String> recipeIngs = recpEntry->second_.ingredients_;
@@ -98,10 +99,18 @@ namespace Laugh {
 
 			if (recipeScore > topScore) {
 				bestRecipe = &(recpEntry->second_);
+				bestRecipeId = &(recpEntry->first_);
 				topScore = recipeScore;
 			}
 
 			++recpEntry;
+		}
+
+		// save item obtained (if not already obtained before)
+		auto& knownRcps = World::instance_->userData_->knownRecipes_;
+		if (knownRcps.IndexOf(*bestRecipeId) == knownRcps.Size()) {
+			knownRcps.Push(*bestRecipeId);
+			World::instance_->SaveUserData();
 		}
 
 		obtainedItemNameText_->SetText(bestRecipe->name_);

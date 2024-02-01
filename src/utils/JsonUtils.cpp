@@ -34,44 +34,44 @@ namespace Laugh {
 		return returnedVec;
 	}
 
-	int JsonUtils::GetIntFromSourceJson(const JSONValue& source, const String& key)
+	int JsonUtils::GetIntFromSourceJson(const JSONValue& source, const String& key, int defaultValue)
 	{
 		if (source.Contains(key))
 		{
 			return source.Get(key).GetInt();
 		}
 
-		return 0;
+		return defaultValue;
 	}
 
-	float JsonUtils::GetFloatFromSourceJson(const JSONValue& source, const String& key)
+	float JsonUtils::GetFloatFromSourceJson(const JSONValue& source, const String& key, float defaultValue)
 	{
 		if (source.Contains(key))
 		{
 			return source.Get(key).GetFloat();
 		}
 
-		return 0.0f;
+		return defaultValue;
 	}
 
-	String JsonUtils::GetStringFromSourceJson(const JSONValue& source, const String& key)
+	String JsonUtils::GetStringFromSourceJson(const JSONValue& source, const String& key, const String& defaultValue)
 	{
 		if (source.Contains(key))
 		{
 			return source.Get(key).GetString();
 		}
 
-		return String();
+		return defaultValue;
 	}
 
-	bool JsonUtils::GetBoolFromSourceJson(const JSONValue& source, const String& key)
+	bool JsonUtils::GetBoolFromSourceJson(const JSONValue& source, const String& key, bool defaultValue)
 	{
 		if (source.Contains(key))
 		{
 			return source.Get(key).GetBool();
 		}
 
-		return false;
+		return defaultValue;
 	}
 
 	Vector2 JsonUtils::GetVector2FromSourceJson(const JSONValue& source, const String& key)
@@ -107,8 +107,9 @@ namespace Laugh {
 	JSONArray JsonUtils::SetupJsonArrayFromStringVector(const Vector<String>& stringVec)
 	{
 		JSONArray returnedArr = JSONArray(stringVec.Size());
-		for (auto iter = stringVec.Begin(); iter != stringVec.End();) {
-			returnedArr.Push(JSONValue(*iter));
+		int i = 0;
+		for (auto iter = stringVec.Begin(); iter != stringVec.End(); ++i) {
+			returnedArr[i] = JSONValue(*iter);
 			++iter;
 		}
 		return returnedArr;

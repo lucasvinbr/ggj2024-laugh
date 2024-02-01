@@ -19,13 +19,13 @@ namespace Laugh {
 
 		static Vector<String> CreateStringVectorFromJsonArray(const JSONValue& source, const String& key);
 
-		static int GetIntFromSourceJson(const JSONValue& source, const String& key);
+		static int GetIntFromSourceJson(const JSONValue& source, const String& key, int defaultValue = 0);
 
-		static float GetFloatFromSourceJson(const JSONValue& source, const String& key);
+		static float GetFloatFromSourceJson(const JSONValue& source, const String& key, float defaultValue = 0.0f);
 
-		static String GetStringFromSourceJson(const JSONValue& source, const String& key);
+		static String GetStringFromSourceJson(const JSONValue& source, const String& key, const String& defaultValue = "");
 
-		static bool GetBoolFromSourceJson(const JSONValue& source, const String& key);
+		static bool GetBoolFromSourceJson(const JSONValue& source, const String& key, bool defaultValue = false);
 
 		static Vector2 GetVector2FromSourceJson(const JSONValue& source, const String& key);
 
