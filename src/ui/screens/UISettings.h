@@ -9,6 +9,7 @@
 #include "../UIGameScreen.h"
 #include "../../dataObjs/RecipeData.h"
 #include <Urho3D/UI/Text.h>
+#include <Urho3D/UI/Slider.h>
 
 using namespace Urho3D;
 
@@ -35,11 +36,12 @@ namespace Laugh {
 		/// </summary>
 		virtual void Hide() override;
 
-		void HandleDoneButton(StringHash, VariantMap& eventData);
+		void HandleCloseButton(StringHash, VariantMap& eventData);
+		void HandleResetSettingsButton(StringHash, VariantMap& eventData);
+		void HandleVolumeSlider(StringHash, VariantMap& eventData);
 	private:
-		Text* obtainedItemNameText_;
+		Slider* volumeSlider_;
 		UIElement* closeBtn_;
-		Sprite* glowSprite_;
-		Sprite* obtainedItemSprite_;
+		UIElement* resetGameProgressBtn_;
 	};
 }

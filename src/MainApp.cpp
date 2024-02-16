@@ -68,6 +68,9 @@ void MainApp::Start()
 	gameAudio_ = new GameAudio(context_);
 	gameAudio_->SetupSound();
 
+	// apply user audio settings now that both user data and audio are ready
+	gameAudio_->SetSoundVolume(world_->userData_->audioVolume_);
+
 	gameUI_ = new GameUI(context_);
 	gameUI_->SetupUI();
 

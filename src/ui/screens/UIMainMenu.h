@@ -33,6 +33,8 @@ namespace Laugh {
 
 		void HandlePlayButton(StringHash, VariantMap& eventData);
 		void HandleExitButton(StringHash, VariantMap& eventData);
+		void HandleConfigButton(StringHash, VariantMap& eventData);
+		void HandleRecipesButton(StringHash, VariantMap& eventData);
 	private:
 
 	};

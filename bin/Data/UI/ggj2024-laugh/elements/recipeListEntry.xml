@@ -1,0 +1,45 @@
+<?xml version="1.0"?>
+<element type="Button">
+	<attribute name="Name" value="recipesListEntry" />
+	<attribute name="Min Size" value="0 220" />
+	<attribute name="Max Size" value="2147483647 220" />
+	<attribute name="Pivot" value="0 0" />
+	<attribute name="Color" value="1 1 1 0" />
+	<attribute name="Top Left Color" value="1 1 1 0" />
+	<attribute name="Top Right Color" value="1 1 1 0" />
+	<attribute name="Bottom Left Color" value="1 1 1 0" />
+	<attribute name="Bottom Right Color" value="1 1 1 0" />
+	<attribute name="Layout Mode" value="Horizontal" />
+	<attribute name="Layout Spacing" value="20" />
+	<attribute name="Layout Border" value="10 10 10 10" />
+	<attribute name="Image Rect" value="16 0 32 16" />
+	<attribute name="Border" value="4 4 4 4" />
+	<attribute name="Hover Image Offset" value="0 16" />
+	<attribute name="Pressed Image Offset" value="16 0" />
+	<element type="BorderImage">
+		<attribute name="Name" value="recipesListEntry_icon_border" />
+		<attribute name="Min Size" value="210 210" />
+		<attribute name="Max Size" value="210 210" />
+		<attribute name="Pivot" value="0 0" />
+		<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+		<attribute name="Image Rect" value="0 0 256 256" />
+		<element type="Sprite" style="Sprite">
+			<attribute name="Name" value="recipesListEntry_sprite" />
+			<attribute name="Position" value="5 5" />
+			<attribute name="Size" value="200 200" />
+			<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_0.png" />
+			<attribute name="Image Rect" value="0 0 256 256" />
+		</element>
+	</element>
+	<element type="Text">
+		<attribute name="Name" value="recipesListEntry_name" />
+		<attribute name="Pivot" value="0 0" />
+		<attribute name="Color" value="0 0 0 1" />
+		<attribute name="Top Left Color" value="0 0 0 1" />
+		<attribute name="Top Right Color" value="0 0 0 1" />
+		<attribute name="Bottom Left Color" value="0 0 0 1" />
+		<attribute name="Bottom Right Color" value="0 0 0 1" />
+		<attribute name="Font Size" value="24" />
+		<attribute name="Text" value="???" />
+	</element>
+</element>

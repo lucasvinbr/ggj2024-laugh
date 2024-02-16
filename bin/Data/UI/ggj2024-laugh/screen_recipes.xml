@@ -1,0 +1,241 @@
+<?xml version="1.0"?>
+<element>
+	<attribute name="Name" value="recipes_screen" />
+	<attribute name="Size" value="1920 1017" />
+	<attribute name="Max Anchor" value="1 1" />
+	<attribute name="Pivot" value="0 0" />
+	<attribute name="Enable Anchor" value="true" />
+	<element type="BorderImage">
+		<attribute name="Name" value="bg_book" />
+		<attribute name="Size" value="1920 1017" />
+		<attribute name="Max Anchor" value="1 1" />
+		<attribute name="Pivot" value="0 0" />
+		<attribute name="Enable Anchor" value="true" />
+		<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bg_book.png" />
+		<attribute name="Image Rect" value="0 0 1024 1024" />
+		<element>
+			<attribute name="Name" value="leftSide" />
+			<attribute name="Position" value="49 40" />
+			<attribute name="Size" value="911 911" />
+			<attribute name="Pivot" value="0 0" />
+			<attribute name="Layout Mode" value="Vertical" />
+			<attribute name="Layout Spacing" value="20" />
+			<element type="Text">
+				<attribute name="Pivot" value="0 0" />
+				<attribute name="Color" value="0 0 0 1" />
+				<attribute name="Top Left Color" value="0 0 0 1" />
+				<attribute name="Top Right Color" value="0 0 0 1" />
+				<attribute name="Bottom Left Color" value="0 0 0 1" />
+				<attribute name="Bottom Right Color" value="0 0 0 1" />
+				<attribute name="Font Size" value="48" />
+				<attribute name="Text" value="RECIPES" />
+			</element>
+			<element type="ListView">
+				<attribute name="Name" value="recipesListView" />
+				<attribute name="Pivot" value="0 0" />
+				<element type="ScrollBar" internal="true" style="none">
+					<attribute name="Size" value="911 16" />
+					<attribute name="Min Anchor" value="0 1" />
+					<attribute name="Max Anchor" value="0 1" />
+					<attribute name="Pivot" value="0 1" />
+					<attribute name="Color" value="0 0 0 0" />
+					<attribute name="Top Left Color" value="0 0 0 0" />
+					<attribute name="Top Right Color" value="0 0 0 0" />
+					<attribute name="Bottom Left Color" value="0 0 0 0" />
+					<attribute name="Bottom Right Color" value="0 0 0 0" />
+					<element type="Button" internal="true" style="none">
+						<attribute name="Size" value="16 16" />
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Border" value="4 4 4 4" />
+						<attribute name="Hover Image Offset" value="0 16" />
+						<attribute name="Pressed Image Offset" value="64 0" />
+					</element>
+					<element type="Slider" internal="true" style="none">
+						<attribute name="Position" value="16 0" />
+						<attribute name="Size" value="879 16" />
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Image Rect" value="64 0 80 16" />
+						<attribute name="Border" value="4 4 4 4" />
+						<element type="BorderImage" internal="true" style="none">
+							<attribute name="Pivot" value="0 0" />
+							<attribute name="Image Rect" value="16 0 32 16" />
+							<attribute name="Border" value="4 4 4 4" />
+							<attribute name="Hover Image Offset" value="0 16" />
+						</element>
+					</element>
+					<element type="Button" internal="true" style="none">
+						<attribute name="Position" value="895 0" />
+						<attribute name="Size" value="16 16" />
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Border" value="4 4 4 4" />
+						<attribute name="Hover Image Offset" value="0 16" />
+						<attribute name="Pressed Image Offset" value="64 0" />
+					</element>
+				</element>
+				<element type="ScrollBar" internal="true" style="none">
+					<attribute name="Size" value="16 714" />
+					<attribute name="Min Anchor" value="1 0" />
+					<attribute name="Max Anchor" value="1 0" />
+					<attribute name="Pivot" value="1 0" />
+					<attribute name="Color" value="0 0 0 0" />
+					<attribute name="Top Left Color" value="0 0 0 0" />
+					<attribute name="Top Right Color" value="0 0 0 0" />
+					<attribute name="Bottom Left Color" value="0 0 0 0" />
+					<attribute name="Bottom Right Color" value="0 0 0 0" />
+					<element type="Button" internal="true" style="none">
+						<attribute name="Size" value="16 16" />
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Border" value="4 4 4 4" />
+						<attribute name="Hover Image Offset" value="0 16" />
+						<attribute name="Pressed Image Offset" value="64 0" />
+					</element>
+					<element type="Slider" internal="true" style="none">
+						<attribute name="Position" value="0 16" />
+						<attribute name="Size" value="16 682" />
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Image Rect" value="64 0 80 16" />
+						<attribute name="Border" value="4 4 4 4" />
+						<element type="BorderImage" internal="true" style="none">
+							<attribute name="Pivot" value="0 0" />
+							<attribute name="Image Rect" value="16 0 32 16" />
+							<attribute name="Border" value="4 4 4 4" />
+							<attribute name="Hover Image Offset" value="0 16" />
+						</element>
+					</element>
+					<element type="Button" internal="true" style="none">
+						<attribute name="Position" value="0 698" />
+						<attribute name="Size" value="16 16" />
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Border" value="4 4 4 4" />
+						<attribute name="Hover Image Offset" value="0 16" />
+						<attribute name="Pressed Image Offset" value="64 0" />
+					</element>
+				</element>
+				<element type="BorderImage" internal="true" style="none">
+					<attribute name="Pivot" value="0 0" />
+					<attribute name="Clip Border" value="2 2 2 2" />
+					<attribute name="Color" value="1 1 1 0" />
+					<attribute name="Top Left Color" value="1 1 1 0" />
+					<attribute name="Top Right Color" value="1 1 1 0" />
+					<attribute name="Bottom Left Color" value="1 1 1 0" />
+					<attribute name="Bottom Right Color" value="1 1 1 0" />
+					<attribute name="Image Rect" value="64 16 80 32" />
+					<attribute name="Border" value="4 4 4 4" />
+					<element internal="true" style="none">
+						<attribute name="Name" value="recipesListView_ItemContainer" />
+						<attribute name="Pivot" value="0 0" />
+						<attribute name="Layout Flex Scale" value="0 100" />
+						<element type="Button">
+							<attribute name="Name" value="recipesListEntry" />
+							<attribute name="Min Size" value="0 220" />
+							<attribute name="Max Size" value="2147483647 220" />
+							<attribute name="Pivot" value="0 0" />
+							<attribute name="Color" value="1 1 1 0" />
+							<attribute name="Top Left Color" value="1 1 1 0" />
+							<attribute name="Top Right Color" value="1 1 1 0" />
+							<attribute name="Bottom Left Color" value="1 1 1 0" />
+							<attribute name="Bottom Right Color" value="1 1 1 0" />
+							<attribute name="Is Visible" value="false" />
+							<attribute name="Layout Mode" value="Horizontal" />
+							<attribute name="Layout Spacing" value="20" />
+							<attribute name="Layout Border" value="10 10 10 10" />
+							<attribute name="Image Rect" value="16 0 32 16" />
+							<attribute name="Border" value="4 4 4 4" />
+							<attribute name="Hover Image Offset" value="0 16" />
+							<attribute name="Pressed Image Offset" value="16 0" />
+							<element type="BorderImage">
+								<attribute name="Name" value="recipesListEntry_icon_border" />
+								<attribute name="Min Size" value="210 210" />
+								<attribute name="Max Size" value="210 210" />
+								<attribute name="Pivot" value="0 0" />
+								<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_colorized.png" />
+								<attribute name="Image Rect" value="0 0 256 256" />
+								<element type="Sprite" style="Sprite">
+									<attribute name="Name" value="recipesListEntry_sprite" />
+									<attribute name="Position" value="5 5" />
+									<attribute name="Size" value="200 200" />
+									<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_0.png" />
+									<attribute name="Image Rect" value="0 0 256 256" />
+								</element>
+							</element>
+							<element type="Text">
+								<attribute name="Name" value="recipesListEntry_name" />
+								<attribute name="Pivot" value="0 0" />
+								<attribute name="Color" value="0 0 0 1" />
+								<attribute name="Top Left Color" value="0 0 0 1" />
+								<attribute name="Top Right Color" value="0 0 0 1" />
+								<attribute name="Bottom Left Color" value="0 0 0 1" />
+								<attribute name="Bottom Right Color" value="0 0 0 1" />
+								<attribute name="Font Size" value="24" />
+								<attribute name="Text" value="???" />
+							</element>
+						</element>
+					</element>
+				</element>
+			</element>
+			<element type="Button">
+				<attribute name="Name" value="ButtonGoBack" />
+				<attribute name="Min Size" value="300 80" />
+				<attribute name="Max Size" value="300 80" />
+				<attribute name="Pivot" value="0 0" />
+				<attribute name="Image Rect" value="16 0 32 16" />
+				<attribute name="Border" value="4 4 4 4" />
+				<attribute name="Hover Image Offset" value="0 16" />
+				<attribute name="Pressed Image Offset" value="16 0" />
+				<attribute name="Pressed Child Offset" value="-1 1" />
+				<element type="Text">
+					<attribute name="Min Anchor" value="0.5 0.5" />
+					<attribute name="Max Anchor" value="0.5 0.5" />
+					<attribute name="Pivot" value="0.5 0.5" />
+					<attribute name="Top Left Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Top Right Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Bottom Left Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Bottom Right Color" value="0.85 0.85 0.85 1" />
+					<attribute name="Font Size" value="48" />
+					<attribute name="Text" value="BACK" />
+				</element>
+			</element>
+		</element>
+		<element>
+			<attribute name="Name" value="rightSide" />
+			<attribute name="Position" value="10 40" />
+			<attribute name="Size" value="911 857" />
+			<attribute name="Min Anchor" value="1 0.5" />
+			<attribute name="Max Anchor" value="1 0.5" />
+			<attribute name="Pivot" value="1 0.5" />
+			<attribute name="Layout Mode" value="Vertical" />
+			<attribute name="Layout Spacing" value="40" />
+			<attribute name="Layout Border" value="20 20 20 20" />
+			<element type="BorderImage">
+				<attribute name="Name" value="selectedRecipeImg" />
+				<attribute name="Min Size" value="700 700" />
+				<attribute name="Max Size" value="700 700" />
+				<attribute name="Min Anchor" value="0.5 0" />
+				<attribute name="Max Anchor" value="0.5 0" />
+				<attribute name="Pivot" value="0.5 0" />
+				<attribute name="Color" value="0 0 0 1" />
+				<attribute name="Top Left Color" value="0 0 0 1" />
+				<attribute name="Top Right Color" value="0 0 0 1" />
+				<attribute name="Bottom Left Color" value="0 0 0 1" />
+				<attribute name="Bottom Right Color" value="0 0 0 1" />
+				<attribute name="Texture" value="Texture2D;Urho2D/ggj2024-laugh/bolha_0.png" />
+				<attribute name="Image Rect" value="0 0 256 256" />
+			</element>
+			<element type="Text">
+				<attribute name="Name" value="selectedRecipeNameText" />
+				<attribute name="Min Anchor" value="0.5 0" />
+				<attribute name="Max Anchor" value="0.5 0" />
+				<attribute name="Pivot" value="0.5 0" />
+				<attribute name="Color" value="0 0 0 1" />
+				<attribute name="Top Left Color" value="0 0 0 1" />
+				<attribute name="Top Right Color" value="0 0 0 1" />
+				<attribute name="Bottom Left Color" value="0 0 0 1" />
+				<attribute name="Bottom Right Color" value="0 0 0 1" />
+				<attribute name="Font Size" value="48" />
+				<attribute name="Text" value="???" />
+				<attribute name="Text Alignment" value="Center" />
+				<attribute name="Text Effect" value="Stroke" />
+			</element>
+		</element>
+	</element>
+</element>

@@ -4,17 +4,21 @@
 #include <Urho3D/Scene/Scene.h>
 #include <Urho3D/Audio/SoundSource.h>
 #include <Urho3D/UI/UIElement.h>
+#include <Urho3D/UI/Sprite.h>
+#include "../../World.h"
 #include "../UIGameScreen.h"
 #include "../../dataObjs/RecipeData.h"
+#include <Urho3D/UI/Text.h>
+#include <Urho3D/UI/Slider.h>
 
 using namespace Urho3D;
 
 namespace Laugh {
-	class UIMixer: public UIGameScreen {
-		URHO3D_OBJECT(UIMixer, UIGameScreen);
+	class UIRecipes: public UIGameScreen {
+		URHO3D_OBJECT(UIRecipes, UIGameScreen);
 	public:
-		UIMixer(Context* c);
-		~UIMixer() override;
+		UIRecipes(Context* c);
+		~UIRecipes() override;
 
 		/// <summary>
 		/// caches references to relevant UI elements of this screen and any other initialization that doesn't depend on the data provided when showing the screen
@@ -32,21 +36,12 @@ namespace Laugh {
 		/// </summary>
 		virtual void Hide() override;
 
-		/// <summary>
-		/// checks the ingredients provided and mixes them, doing anims to show the result
-		/// </summary>
-		void MixIngredients();
-
-		void HandleStartMixButton(StringHash, VariantMap& eventData);
-		void HandlePickIngredientButton(StringHash, VariantMap& eventData);
-		void HandleGoBackButton(StringHash, VariantMap& eventData);
+		void HandleCloseButton(StringHash, VariantMap& eventData);
+		void HandleResetSettingsButton(StringHash, VariantMap& eventData);
+		void HandleVolumeSlider(StringHash, VariantMap& eventData);
 	private:
-		Node* scenarioStuffParent_;
-
-		Vector<UIElement*> pickIngredientBtns_;
-
-		UIElement* ingredientsPickerBar_;
-		UIElement* startMixingBtn_;
-		UIElement* goBackBtn_;
+		Slider* volumeSlider_;
+		UIElement* closeBtn_;
+		UIElement* resetGameProgressBtn_;
 	};
 }

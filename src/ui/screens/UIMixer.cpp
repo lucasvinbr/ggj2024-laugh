@@ -15,6 +15,7 @@
 #include <Urho3D/Urho2D/StaticSprite2D.h>
 #include <Urho3D/Graphics/Texture2D.h>
 #include "../../GameAudio.h"
+#include "UIMainMenu.h"
 
 using namespace Urho3D;
 
@@ -25,6 +26,7 @@ namespace Laugh {
 		ingredientsPickerBar_ = nullptr;
 		scenarioStuffParent_ = nullptr;
 		startMixingBtn_ = nullptr;
+		goBackBtn_ = nullptr;
 
 		auto cache = c->GetSubsystem<ResourceCache>();
 		auto ui = c->GetSubsystem<UI>();
@@ -50,6 +52,11 @@ namespace Laugh {
 		startMixingBtn_->SetStyleAuto();
 		SubscribeToEvent(startMixingBtn_, E_RELEASED, URHO3D_HANDLER(UIMixer, HandleStartMixButton));
 		startMixingBtn_->SetVisible(false);
+
+		goBackBtn_ = instanceRoot_->GetChild("backButton", true);
+		goBackBtn_->SetStyleAuto();
+		SubscribeToEvent(goBackBtn_, E_RELEASED, URHO3D_HANDLER(UIMixer, HandleGoBackButton));
+		goBackBtn_->SetVisible(true);
 
 		// find ingredient buttons container
 		// create buttons for each ingredient, and add the event to each of them
@@ -83,6 +90,7 @@ namespace Laugh {
 		World::instance_->mixer_->Cleanup();
 
 		startMixingBtn_->SetVisible(false);
+		goBackBtn_->SetVisible(true);
 		ingredientsPickerBar_->SetVisible(true);
 	}
 
@@ -119,6 +127,8 @@ namespace Laugh {
 
 	void UIMixer::HandlePickIngredientButton(StringHash, VariantMap& eventData)
 	{
+		goBackBtn_->SetVisible(false);
+
 		// if not enough ingredients picked yet, add ingredient, do anim.
 		// if enough ingredients picked now, hide ingredients list, show mix button
 		auto cache = GetSubsystem<ResourceCache>();
@@ -170,6 +180,12 @@ namespace Laugh {
 				startMixingBtn_->SetVisible(true);
 			}
 		}
+	}
+
+	void UIMixer::HandleGoBackButton(StringHash, VariantMap& eventData)
+	{
+		Hide();
+		GameUI::instance_->ShowScreen<UIMainMenu>();
 	}
 
 }

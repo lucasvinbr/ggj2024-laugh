@@ -11,6 +11,8 @@
 #include <Urho3D/Core/ProcessUtils.h>
 #include <Urho3D/Engine/Engine.h>
 #include "UILoading.h"
+#include "UISettings.h"
+#include "UIRecipes.h"
 
 using namespace Urho3D;
 
@@ -42,6 +44,14 @@ namespace Laugh {
 		auto buttonExit = instanceRoot_->GetChild("ButtonExit", true);
 		buttonExit->SetStyleAuto();
 		SubscribeToEvent(buttonExit, E_RELEASED, URHO3D_HANDLER(UIMainMenu, HandleExitButton));
+
+		auto buttonConfig = instanceRoot_->GetChild("ButtonSettings", true);
+		buttonConfig->SetStyleAuto();
+		SubscribeToEvent(buttonConfig, E_RELEASED, URHO3D_HANDLER(UIMainMenu, HandleConfigButton));
+
+		auto buttonRecipes = instanceRoot_->GetChild("ButtonrRecipes", true);
+		buttonRecipes->SetStyleAuto();
+		SubscribeToEvent(buttonRecipes, E_RELEASED, URHO3D_HANDLER(UIMainMenu, HandleRecipesButton));
 	}
 
 	void UIMainMenu::Show(String dataPassed)
@@ -50,6 +60,11 @@ namespace Laugh {
 		instanceRoot_->SetVisible(true);
 
 		GameAudio::instance_->PlayTitleSound();
+
+		World::instance_->topLeftArm_->SetOnScreen(true);
+		World::instance_->topRightArm_->SetOnScreen(true);
+		World::instance_->botLeftArm_->SetOnScreen(true);
+		World::instance_->botRightArm_->SetOnScreen(true);
 	}
 
 	void UIMainMenu::Hide()
@@ -77,6 +92,22 @@ namespace Laugh {
 	{
 		if (GetPlatform() != "Web")
 			context_->GetSubsystem<Engine>()->Exit();
+	}
+
+	void UIMainMenu::HandleConfigButton(StringHash, VariantMap& eventData)
+	{
+		Hide();
+		GameUI::instance_->ShowScreen<UISettings>();
+
+		GameAudio::instance_->PlayClickSound();
+	}
+
+	void UIMainMenu::HandleRecipesButton(StringHash, VariantMap& eventData)
+	{
+		Hide();
+		GameUI::instance_->ShowScreen<UIRecipes>();
+
+		GameAudio::instance_->PlayClickSound();
 	}
 
 }
